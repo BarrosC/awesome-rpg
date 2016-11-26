@@ -29,6 +29,15 @@ public class Main {
 				+ " ╚════██║  ██║  ██╔══████╔══██╗    ██╔══╝ ████║   ████╔══████╔══██╗  ██║  ██╔══╝ ██╔══██╗\n"
 				+ " ███████║  ██║  ██║  ████║  ██║    ██║    ██╚██████╔██║  ████║  ██║  ██║  █████████║  ██║\n"
 				+ " ╚══════╝  ╚═╝  ╚═╝  ╚═╚═╝  ╚═╝    ╚═╝    ╚═╝╚═════╝╚═╝  ╚═╚═╝  ╚═╝  ╚═╝  ╚══════╚═╝  ╚═╝\n\n"
+				+ ".		.	.			.					.					\n"
+				+ "     .     _,---.__          .     .         ________,-----.__      .         .    .     \n"
+				+ "          /_________`-------._    .      _,-'      ___ ---    `--._            .\n"
+				+ "      .    ,----------------------------<         |   |---     `-._`-._	  .		  .  \n"
+				+ "   .      (======(    ==============   | )  - - - - - - - - - - - - - - >.    . \n"
+				+ "  .   .    `----------------------------'         |___|---       __,--'    .    .    .\n"
+				+ "       .     `|     ,-----.----.-----._______________________,--'  .     .  \n"
+				+ "     .    .   |____/     _|____|_     _|_____|_	 	. .    . .        	     .\n"
+				+ "		.					.			.            	   	\n"
 				+ "**** Capítulo 1 - O Local Queda ****"
 				+ "\n\n\n[sons de Alerta] \n\n"
 				+ "Você a corda com o som do sinal de alerta, luzes de emergência piscam, faíscas estão cintilando em várias partes do painel de instrumentos e do cockpit.\n"
@@ -46,12 +55,13 @@ public class Main {
 				+ "[UNIDADE MÉDICA ATIVADA...]\n\n"
 				+ "[ESTABILIZAR. 250 MILIGRAMAS DE SANSUFETANIL : Aplicados]\n"
 				+ "[ATENÇÃO EFEITOS COLATERIAS TEMPORÁRIOS: Náusea, tontura, coordenação motora pode ser prejudicada.]\n\n"
+				
 				+ "Você abre as caixar de equipamento e pega um Rifle de Plama e uma Pistola de ions, esta que pode atordoar alvos.\n"
 				+ "Ao olhar ao redor existe fio soltando faíscas que pode religar um painel que aciona o sinal de socorro, você sabe que o sinal pode ser sua unica chance de ser resgatado, \n"
 				+ "mas também sabe que derrubou sua nave ainda pode estar ouvindo... \n\n"
 				
 				//tomada de decisão de ação sair da nave ou ligar sinal de socorro
-				+ "ACIONAR SINAL DE S.O.S ?\n"
+				+ "ACIONAR SINAL DE S.O.S ?\n\n"
 				+ "respostas disponíveis >>>> 'sim'  ou 'não' ou 'nao fazer nada'\n"
 				+ "||Aguardando decisão||");
 				choiceSignal = scan.nextLine();
@@ -90,7 +100,7 @@ public class Main {
 							+ "Você acha melhor explorar a área ao redor, análisar o terreno e garantir a segurança para analisar qual será o próximno passo\n\n"
 				
 					//tomada de decisão de ação - seguir caminho da trincheira e destroços, ou ir para outro lado
-					+ "o que fazer? 'seguir trilha' de destroços ou ir para o 'outro lado'?\n"
+					+ "o que fazer? 'seguir trilha' de destroços ou ir para o 'outro lado'?\n\n"
 					+ "respostas disponíveis >>>> 'seguir trilha' ou 'outro lado'\n"
 					+ "||Aguardando decisão||");
 					choice = scan.nextLine();
