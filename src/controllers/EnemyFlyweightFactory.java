@@ -7,18 +7,22 @@ import java.util.ArrayList;
 import models.Enemy;
 
 public class EnemyFlyweightFactory implements FlyweightInterface {
-	protected ArrayList<Enemy> enemies;
+	protected ArrayList<Object> enemies;
  
     public EnemyFlyweightFactory() {
-        setFlyweight();
+    	setArraylist();
     }
     
-    public void setFlyweight() {
-        enemies = new ArrayList<Enemy>();
+    public void setArraylist() {
+        enemies = new ArrayList<Object>();
         //enemies.add(new Enemy());
     }
+    
+    public ArrayList<Object> getItems() {
+    	return enemies;
+    }
  
-    public Object getFlyweight(String name) {
+    public Object getItem(String name) {
         switch (name) {
 	        /*case JOGADOR:
 	            return flyweights.get(0);
@@ -38,4 +42,9 @@ public class EnemyFlyweightFactory implements FlyweightInterface {
         
         return new Object();
     }
+
+	public Integer getLength() {
+		
+		return enemies.size();
+	}
 }

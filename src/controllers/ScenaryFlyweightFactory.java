@@ -8,18 +8,22 @@ import models.Enemy;
 import models.Scenary;
 
 public class ScenaryFlyweightFactory implements FlyweightInterface {
-	protected ArrayList<Scenary> scenaries;
+	public static ArrayList<Object> scenaries;
  
     public ScenaryFlyweightFactory() {
-        setFlyweight();
+    	setArraylist();
     }
     
-    public void setFlyweight() {
-    	scenaries = new ArrayList<Scenary>();
+    public void setArraylist() {
+    	scenaries = new ArrayList<Object>();
     	scenaries.add(new Scenary());
     }
+    
+    public ArrayList<Object> getItems() {
+    	return scenaries;
+    }
  
-    public Object getFlyweight(String name) {
+    public Object getItem(String name) {
         switch (name) {
 	        /*case JOGADOR:
 	            return flyweights.get(0);
@@ -37,4 +41,8 @@ public class ScenaryFlyweightFactory implements FlyweightInterface {
         
         return new Scenary();
     }
+
+	public Integer getLength() {
+		return scenaries.size();
+	}
 }

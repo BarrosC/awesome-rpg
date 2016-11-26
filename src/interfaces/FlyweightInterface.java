@@ -1,6 +1,10 @@
 package interfaces;
 
+import java.util.ArrayList;
+
 public interface FlyweightInterface {
-	public void setFlyweight();
-	public Object getFlyweight(String name);
+	public void setArraylist();
+	public ArrayList<Object> getItems();
+	public Object getItem(String name);
+	public Integer getLength();
 }
