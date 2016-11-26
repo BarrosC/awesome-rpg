@@ -5,17 +5,18 @@ import interfaces.FlyweightInterface;
 import java.util.ArrayList;
 
 import models.Enemy;
+import models.Scenary;
 
-public class EnemyFlyweightFactory implements FlyweightInterface {
-	protected ArrayList<Enemy> enemies;
+public class ScenaryFlyweightFactory implements FlyweightInterface {
+	protected ArrayList<Scenary> scenaries;
  
-    public EnemyFlyweightFactory() {
+    public ScenaryFlyweightFactory() {
         setFlyweight();
     }
     
     public void setFlyweight() {
-        enemies = new ArrayList<Enemy>();
-        //enemies.add(new Enemy());
+    	scenaries = new ArrayList<Scenary>();
+    	scenaries.add(new Scenary());
     }
  
     public Object getFlyweight(String name) {
@@ -34,8 +35,6 @@ public class EnemyFlyweightFactory implements FlyweightInterface {
 	            return flyweights.get(5);*/
         }
         
-        //return new Enemy();
-        
-        return new Object();
+        return new Scenary();
     }
 }
