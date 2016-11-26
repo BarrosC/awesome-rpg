@@ -39,14 +39,14 @@ public class Main {
 				+ "[Inicializando...]\n"
 				+ "[Inicializando...]\n"
 				+ "[Inicializando...]\n"
-				+ "[Inicializando...]\n"
+				+ "[Inicializando...]\n\n"
 				+ "[USUÁRIO IDENTIFICADO]\n"
-				+ "[FUZILEIRO ESTELAR XXXXXXXXXX - NÙMERO DE SERVIÇO: 20-131]\n"
+				+ "[FUZILEIRO ESTELAR XXXXXXXXXX - NÙMERO DE SERVIÇO: 20-131]\n\n"
 				+" [INICIANDO DIAGNÓSTICO...]\n"
-				+ "[UNIDADE MÉDICA ATIVADA...]\n"
+				+ "[UNIDADE MÉDICA ATIVADA...]\n\n"
 				+ "[ESTABILIZAR. 250 MILIGRAMAS DE SANSUFETANIL : Aplicados]\n"
-				+ "[ATENÇÃO EFEITOS COLATERIAS TEMPORÁRIOS: Náusea, tontura, coordenação motora pode ser prejudicada.]\n"
-				+ "[pega um rifle e uma pistola] \n"
+				+ "[ATENÇÃO EFEITOS COLATERIAS TEMPORÁRIOS: Náusea, tontura, coordenação motora pode ser prejudicada.]\n\n"
+				+ "Você abre as caixar de equipamento e pega um Rifle de Plama e uma Pistola de ions, esta que pode atordoar alvos.\n"
 				+ "Ao olhar ao redor existe fio soltando faíscas que pode religar um painel que aciona o sinal de socorro, você sabe que o sinal pode ser sua unica chance de ser resgatado, \n"
 				+ "mas também sabe que derrubou sua nave ainda pode estar ouvindo... \n\n"
 				
@@ -77,7 +77,7 @@ public class Main {
 						
 						choice = "sim";
 				
-				if(choiceSignal.equalsIgnoreCase("não") || choice.equalsIgnoreCase("sim")){
+				if(choiceSignal.equalsIgnoreCase("NÃO") || choiceSignal.equalsIgnoreCase("NAO") || choice.equalsIgnoreCase("SIM")){
 					System.out.println("Você se dirige a saída da nave...\n"
 							+ "A porta se abre e ao sair da nave você se depara com uma clareira que a queda abriu em meio a uma floresta...\n"
 							+ "ao dar uma breve olhada para sua nave, ve que os danos são catrastróficos...\n"
@@ -90,7 +90,7 @@ public class Main {
 							+ "Você acha melhor explorar a área ao redor, análisar o terreno e garantir a segurança para analisar qual será o próximno passo\n\n"
 				
 					//tomada de decisão de ação - seguir caminho da trincheira e destroços, ou ir para outro lado
-					+ "o que fazer? 'seguir a trilha' de destroços ou ir para o 'outro lado'?\n"
+					+ "o que fazer? 'seguir trilha' de destroços ou ir para o 'outro lado'?\n"
 					+ "respostas disponíveis >>>> 'seguir trilha' ou 'outro lado'\n"
 					+ "||Aguardando decisão||");
 					choice = scan.nextLine();
@@ -145,7 +145,7 @@ public class Main {
 					
 				}
 				
-				if(choice.equalsIgnoreCase("seguir")){
+				if(choice.equalsIgnoreCase("SEGUIR TRILHA")){
 					System.out.println("A trilha está cheia de destroços da sua nave, alguns ainda estão em chamas.\n"
 							+ "você chega ao que restou da cauda da nave, entra e ve que a maioria dos equipamentos, poor algum milagre ainda estão intactos, mas como estão apenas com a energia auxiliar, \n"
 							+ "um diagnóstico completo só poderá ser feito quando a energia principal for restauranda, infelizmente as baterias de alta potência estão na outra metade da nave, algo terá que ser deslocado...\n"
@@ -155,11 +155,11 @@ public class Main {
 							
 						//tomada de decisão	
 						+"você pode tentar ajudá-los, ou não se envolver, mas dificilmente passará desbercebido quando a criatura acabar com eles.\n"
-						+ "respostas disponíveis >>>> 'Ajudar Nativos' ou 'não se envolver'\n"
+						+ "respostas disponíveis >>>> 'Ajudar' Nativos ou 'não se envolver'\n"
 						+ "||Aguardando decisão||");
 						choiceTrilha = scan.nextLine();					
 				
-					if(choiceTrilha.equalsIgnoreCase("Atacar Criatura")){
+					if(choiceTrilha.equalsIgnoreCase("AJUDAR")){
 						System.out.println("ATACANDO CRIATURA");
 						
 						//iniciar mecanica de combate com players atacando primeiro
@@ -184,7 +184,7 @@ public class Main {
 						 */
 					}
 				
-					if(choiceTrilha.equalsIgnoreCase("Deixar que")){
+					if(choiceTrilha.equalsIgnoreCase("não se envolver")){
 						System.out.println("VENDO OS NATIVOS MORREREM");
 						
 						//iniciar mecanica de combate com criaturas atacando primeiro
