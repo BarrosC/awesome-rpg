@@ -66,28 +66,50 @@ public class Main {
 				+ "       .     `|     ,-----.----.-----._______________________,--'  .     .  \n"
 				+ "     .    .   |____/     _|____|_     _|_____|_	 	. .    . .        	     .\n"
 				+ "		.					.			.            	   	\n"
-				+ "**** Capítulo 1 - O Local Queda ****"
-				
-				+ "\n\n\n[sons de Alerta] \n\n"
-				
-				+ "Você a corda com o som do sinal de alerta, luzes de emergência piscam, faíscas estão cintilando em várias partes do painel de instrumentos e do cockpit.\n"
+				);
+		
+		System.out.println("Pressione ENTER para iniciar sua jornada");
+		choice = scan.nextLine();
+		
+		System.out.println("**** Capítulo 1 - O Local Queda ****");
+		
+		String InicioCap1[] = {""				
+				+ "\n\n\n[sons de Alerta] \n",
+				"Você acorda com o som do sinal de alerta...luzes de emergência piscam... sua visão vai voltando ao normal aos poucos."
+				+ "faíscas cintilam em várias partes do paineis de instrumentos pelo cockpit.\n"
 				+ "Ao olhar para o lado você ve seu co-piloto incônsciente, o indicador do traje mostra que ele já está sem vida, não há nada que você possa fazer.\n"
 				+ "Você levanta do acento e se dirige a parte traseira de sua nave, observa que existem algumas caixas de suprimentos, outras de equipamentos militar, e um trage de combate.\n"
-				+ "você veste o trage, pois ele possui uma unidade médica de campo, capaz de realiza diagnósticos e análises de sinais vitais do usuário\n");
+				+ "você acha melhor vestir o trage, pois o planeta pode ser hostil e uma proteção a mais cairá bem... além disso, o traje possui uma unidade médica de campo, \n"
+				+ "capaz de realizar diagnósticos e análises de sinais vitais do usuário\n"				
+		};
+		
+		for (int i = 0;
+	             i < InicioCap1.length;
+	             i++) {
+	            //pausa de 1,5 segundos por linha
+	            try {
+					Thread.sleep(1500);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	            //Print a message
+	            System.out.println(InicioCap1[i]);
+	        }
 				
-		System.out.println("Pressione enter para vestir o traje...");
+		System.out.println("Pressione ENTER para vestir o traje...");
 				choice = scan.nextLine();
 				
 				System.out.println("Você veste o trage, assim que coloca o capacete, o visor se inicia...\n\n");
 		
 		
 		String InicializandoTraje[] = {
-				"-- Exo-Armadura XT32 --",
-				"  [CARREGANDO DADOS]\n",
+				"-- Exo-Armadura XT32 --\n"
+				+"  [CARREGANDO DADOS]\n",
+				"     [Inicializando...]",
+				"     [Inicializando...]",
 				"     [Inicializando...]\n",
-				"     [Inicializando...]\n",
-				"     [Inicializando...]\n",
-	            "[USUÁRIO IDENTIFICADO]\n"
+	            " [USUÁRIO IDENTIFICADO]\n"
 	        };
 		
 		
@@ -95,7 +117,7 @@ public class Main {
 		for (int i = 0;
 	             i < InicializandoTraje.length;
 	             i++) {
-	            //Pause for 4 seconds
+	            //Pausa de 2,5 segundos por linha
 	            try {
 					Thread.sleep(2500);
 				} catch (InterruptedException e) {
@@ -108,9 +130,9 @@ public class Main {
 		
 		
 		String TrajeUsuario[] = {
-				" [FUZILEIRO ESTELAR :::: Cpt. James Allister - NÚMERO DE SERVIÇO: 20-131]\n\n",
+				" [FUZILEIRO ESTELAR :::: Cpt. James Allister - NÚMERO DE SERVIÇO: 20-131]\n",
 				" [INICIANDO DIAGNÓSTICO...]\n",
-				" [UNIDADE MÉDICA ATIVADA...]\n\n",
+				" [UNIDADE MÉDICA ATIVADA...]\n",
 				" [ESTABILIZAR. 250 MILIGRAMAS DE SANSUFETANIL : Aplicados]\n",
 				" [ATENÇÃO EFEITOS COLATERIAS TEMPORÁRIOS: Náusea, tontura, coordenação motora pode ser prejudicada.]\n\n"
 		};
@@ -119,7 +141,7 @@ public class Main {
 		for (int i = 0;
 	             i < TrajeUsuario.length;
 	             i++) {
-	            //Pause for 4 seconds
+	            //Pausa de 1,7 segundos por linha
 	            try {
 					Thread.sleep(1700);
 				} catch (InterruptedException e) {
@@ -130,16 +152,30 @@ public class Main {
 	            System.out.println(TrajeUsuario[i]);
 	        }
 		
-		
-		System.out.println( "Você abre as caixar de equipamento e pega um Rifle de Plasma e uma Pistola de ions, esta que pode atordoar alvos.\n"
-				+ "Ao olhar ao redor existe fio soltando faíscas que pode religar um painel que aciona o sinal de socorro, você sabe que o sinal pode ser sua unica chance de ser resgatado, \n"
-				+ "mas também sabe que derrubou sua nave ainda pode estar ouvindo... \n\n"
-				
-				//tomada de decisão de ação sair da nave ou ligar sinal de socorro
-				+ "ACIONAR SINAL DE S.O.S ?\n\n"
+		String Parte2[] = { "\nVocê abre uma das caixas de equipamento e pega um Rifle de Plasma e uma Pistola de ions, esta que pode atordoar alvos. \n"
+				+ "Ao olhar ao redor existe um fio soltando faíscas que pode religar um painel que aciona o sinal de socorro, você sabe que o sinal pode ser sua unica chance de ser resgatado, \n"
+				+ "mas também sabe que quem derrubou sua nave ainda pode estar ouvindo... \n"
+				+"ACIONAR SINAL DE S.O.S ?\n\n"
 				+ "respostas disponíveis >>>> 'sim'  ou 'não' ou 'nao fazer nada'\n"
-				+ "||Aguardando decisão||");
-
+				+ "||Aguardando decisão||"				
+		};
+		
+		
+		for (int i = 0;
+	             i < Parte2.length;
+	             i++) {
+	            //Pausa de 1,7 segundos por linha
+	            try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	            //Print a message
+	            System.out.println(Parte2[i]);
+	        }
+		
+		
 				Weapon plasmaRifle = new Weapon("Rifle de plasma", "Rifle que dispara feixes de plasma.", RoleConstants.PILOT, ElementConstants.NORMAL, 1, 6.0);
 				player.setWeapon(plasmaRifle);
 				playerMoves.add( new Move("Tiro de plasma", "Dispara um feixe de plasma concentrado.", ElementConstants.NORMAL, true, 2.0, 0));
@@ -148,27 +184,44 @@ public class Main {
 		
 
 				if(choiceSignal.equalsIgnoreCase("SIM")){
-				System.out.println( "[SINAL DE SOCORRO ACIONADO]\n"
-						+ "[INICIANDO TRANSMISSÃO]\n"
-						+ "...\n"
-						+ "...\n"
-						+ "[ANTENA PRINCIPAL DANIFICADA]\n"
-						+ "...\n"
-						+ "...\n"
-						+ "...\n"
-						+ "[PASSANDO PARA AUXILIAR]\n"
-						+ "...\n"
-						+ "[ALCANCE DO SINAL COMPROMETIDO]\n"
-						+ "...\n"
-						+ "...\n"
-						+ "[TRANSMITINDO APENAS PARA SISTEMAS PLANETÁRIOS PRÓXIMOS]\n\n"
-						+ "[:::: RECOMENDAÇÃO ::::]\n"
-						+ "[REPARAR A ANTENA PRINCIPAL PARA TRANSMITIR SINAL INTER-ESTELAR]\n\n");
+					
+					String SinalDeSocorro[] = {
+							"[SINAL DE SOCORRO ACIONADO]",
+							"[INICIANDO TRANSMISSÃO]",
+							" ...",
+							" ...",
+							"[ERRO NA TRANSMISSÃO]",
+							"[ANTENA PRINCIPAL DANIFICADA]",
+							"[PASSANDO PARA AUXILIAR]",
+							" ...\n",
+							"[========ATENÇÃO=========]",
+							"[ALCANCE DO SINAL COMPROMETIDO]",
+							"[TRANSMITINDO APENAS PARA SISTEMAS PLANETÁRIOS PRÓXIMOS]",
+							"[:::: RECOMENDAÇÃO ::::]",
+							"[REPARAR A ANTENA PRINCIPAL PARA TRANSMITIR SINAL INTER-ESTELAR]\n\n"
+							
+					};
+					
+					for (int i = 0;
+				             i < SinalDeSocorro.length;
+				             i++) {
+				            //Pausa de 1,7 segundos por linha
+				            try {
+								Thread.sleep(1700);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(SinalDeSocorro[i]);
+				        }				
+				
 						
 						choice = "sim";
 				
 				if(choiceSignal.equalsIgnoreCase("NÃO") || choiceSignal.equalsIgnoreCase("NAO") || choice.equalsIgnoreCase("SIM")){
-					System.out.println("Você se dirige a saída da nave...\n"
+					
+					String Parte3a[] = { "\nVocê se dirige a saída da nave...\n"
 							+ "A porta se abre e ao sair da nave você se depara com uma clareira que a queda abriu em meio a uma floresta...\n"
 							+ "ao dar uma breve olhada para sua nave, ve que os danos são catrastróficos...\n"
 							+ "os motores principais, ou oque sobrou de três deles nunca mais mais irão voar, \n"
@@ -177,18 +230,37 @@ public class Main {
 							+ "Você ve um rastro de destroços e uma enorme trincheira de uns 500 metros de comprimento que a quedra abriu... e ao longe uma parte da nave ainda em chamas\n"
 							+ "\n"
 							+ "Até o momento você não se depara com nenhum ser vivo no local, está de noite, a lua do planeta em sua fase mais cheia possibilita uma iluminação singular, em meio a escuridão\n"
-							+ "Você acha melhor explorar a área ao redor, análisar o terreno e garantir a segurança para analisar qual será o próximno passo\n\n"
+							+ "Você acha melhor explorar a área ao redor, análisar o terreno e garantir a segurança para analisar qual será o próximno passo\n\n"							
+					
+					
+					//tomada de decisão de ação - seguir caminho da trincheira e destroços, ou ir para outro lado												
+						+"o que fazer? 'seguir trilha' de destroços ou ir para o 'outro lado'?\n\n"
+						+ "respostas disponíveis >>>> 'seguir trilha' ou 'outro lado'\n"
+						+ "||Aguardando decisão||"									
+					};
+					
+					
+					for (int i = 0;
+				             i < Parte3a.length;
+				             i++) {
+				            //Pausa de 3,5 segundos por linha
+				            try {
+								Thread.sleep(4000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(Parte3a[i]);
+				        }
+					
 				
-					//tomada de decisão de ação - seguir caminho da trincheira e destroços, ou ir para outro lado
-					+ "o que fazer? 'seguir trilha' de destroços ou ir para o 'outro lado'?\n\n"
-					+ "respostas disponíveis >>>> 'seguir trilha' ou 'outro lado'\n"
-					+ "||Aguardando decisão||");
-					choice = scan.nextLine();
+				choice = scan.nextLine();
 				
 				
 				
 				if(choice.equalsIgnoreCase("OUTRO LADO")){
-					System.out.println("Você marca a nave no touch pad no ante-braço do trage e coloca em modo mapeamento, isto não deixará você se perder e ainda vai mapear o terreno.\n"
+					System.out.println("\nVocê marca a nave no touch pad no ante-braço do trage e coloca em modo mapeamento, isto não deixará você se perder e ainda vai mapear o terreno.\n"
 							+ "A floresta é densa, árvores grandes e altas em um terreno irregular.\n"
 							+ "após andar alguns quilometros você ouve sons estranhos, animais talves?... \n"
 							+ "você vai investigar a direção de onde veio o som, mas antes que possa chegar ao local, ouve um grito de mulher.\n"
@@ -255,7 +327,7 @@ public class Main {
 				}
 			}
 			else{
-				System.out.println("você se senta em uma das caixas de equipamento, quando percebe que uma célula de combustível se solta do compartimento de carga acima, se deslocando próximo ao fio que soltando faíscas perto do painel...\n"
+				System.out.println("você se senta em uma das caixas de equipamento, quando percebe que uma célula de combustível se solta do compartimento de carga acima, se deslocando próximo ao fio que que estava soltando faíscas perto do painel...\n"
 						+ "você tenta fazer algo, mas não alcança a célula de combustível a tempo, o curto-circuito causa uma imensa explosão...\n\n"
 						+ "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"
 						+ "░█▀▀ ░█▀█ ░█ ░█▀▀ ░░█▀▀ ░█▀█░█ ░█░░░░\n"
