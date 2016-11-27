@@ -42,6 +42,7 @@ public class Main {
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		
+
 		System.out.println( "**** RPG textual de narrativa baseada nas escolhas do jogador ****\n"
 				+ "   ********* por Cristiano Barros e Gustavo Silva ********* \n\n"
 				+ " ██████████╗  █████████╗    ██╗     ██████╗███████████████╗                              \n"
@@ -66,24 +67,71 @@ public class Main {
 				+ "     .    .   |____/     _|____|_     _|_____|_	 	. .    . .        	     .\n"
 				+ "		.					.			.            	   	\n"
 				+ "**** Capítulo 1 - O Local Queda ****"
+				
 				+ "\n\n\n[sons de Alerta] \n\n"
+				
 				+ "Você a corda com o som do sinal de alerta, luzes de emergência piscam, faíscas estão cintilando em várias partes do painel de instrumentos e do cockpit.\n"
 				+ "Ao olhar para o lado você ve seu co-piloto incônsciente, o indicador do traje mostra que ele já está sem vida, não há nada que você possa fazer.\n"
 				+ "Você levanta do acento e se dirige a parte traseira de sua nave, observa que existem algumas caixas de suprimentos, outras de equipamentos militar, e um trage de combate.\n"
-				+ "você veste o trage, pois ele possui uma unidade médica de campo, capaz de realiza diagnósticos e análises de sinais vitais do usuário\n"
-				+ "o visor do trage se iniicia assim que você coloca o capacete...\n\n"
-				+ "[Inicializando...]\n"
-				+ "[Inicializando...]\n"
-				+ "[Inicializando...]\n"
-				+ "[Inicializando...]\n\n"
-				+ "[USUÁRIO IDENTIFICADO]\n"
-				+ "[FUZILEIRO ESTELAR XXXXXXXXXX - NÙMERO DE SERVIÇO: 20-131]\n\n"
-				+" [INICIANDO DIAGNÓSTICO...]\n"
-				+ "[UNIDADE MÉDICA ATIVADA...]\n\n"
-				+ "[ESTABILIZAR. 250 MILIGRAMAS DE SANSUFETANIL : Aplicados]\n"
-				+ "[ATENÇÃO EFEITOS COLATERIAS TEMPORÁRIOS: Náusea, tontura, coordenação motora pode ser prejudicada.]\n\n"
+				+ "você veste o trage, pois ele possui uma unidade médica de campo, capaz de realiza diagnósticos e análises de sinais vitais do usuário\n");
 				
-				+ "Você abre as caixar de equipamento e pega um Rifle de Plasma e uma Pistola de ions, esta que pode atordoar alvos.\n"
+		System.out.println("Pressione enter para vestir o traje...");
+				choice = scan.nextLine();
+				
+				System.out.println("Você veste o trage, assim que coloca o capacete, o visor se inicia...\n\n");
+		
+		
+		String InicializandoTraje[] = {
+				"-- Exo-Armadura XT32 --",
+				"  [CARREGANDO DADOS]\n",
+				"     [Inicializando...]\n",
+				"     [Inicializando...]\n",
+				"     [Inicializando...]\n",
+	            "[USUÁRIO IDENTIFICADO]\n"
+	        };
+		
+		
+		
+		for (int i = 0;
+	             i < InicializandoTraje.length;
+	             i++) {
+	            //Pause for 4 seconds
+	            try {
+					Thread.sleep(2500);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	            //Print a message
+	            System.out.println(InicializandoTraje[i]);
+	        }
+		
+		
+		String TrajeUsuario[] = {
+				" [FUZILEIRO ESTELAR :::: Cpt. James Allister - NÚMERO DE SERVIÇO: 20-131]\n\n",
+				" [INICIANDO DIAGNÓSTICO...]\n",
+				" [UNIDADE MÉDICA ATIVADA...]\n\n",
+				" [ESTABILIZAR. 250 MILIGRAMAS DE SANSUFETANIL : Aplicados]\n",
+				" [ATENÇÃO EFEITOS COLATERIAS TEMPORÁRIOS: Náusea, tontura, coordenação motora pode ser prejudicada.]\n\n"
+		};
+		
+		
+		for (int i = 0;
+	             i < TrajeUsuario.length;
+	             i++) {
+	            //Pause for 4 seconds
+	            try {
+					Thread.sleep(1700);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	            //Print a message
+	            System.out.println(TrajeUsuario[i]);
+	        }
+		
+		
+		System.out.println( "Você abre as caixar de equipamento e pega um Rifle de Plasma e uma Pistola de ions, esta que pode atordoar alvos.\n"
 				+ "Ao olhar ao redor existe fio soltando faíscas que pode religar um painel que aciona o sinal de socorro, você sabe que o sinal pode ser sua unica chance de ser resgatado, \n"
 				+ "mas também sabe que derrubou sua nave ainda pode estar ouvindo... \n\n"
 				
