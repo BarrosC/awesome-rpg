@@ -36,7 +36,7 @@ public class FightController {
 				
 				for (Move move : player.getMoves()) {
 					
-					System.out.println(loopIndex + ". " + move.getName());
+					System.out.println(loopIndex + ". " + move.getName() + "\n");
 					loopIndex++;
 				}
 
@@ -55,7 +55,7 @@ public class FightController {
 		
 		
 		if (enemy.getBaseHealth() <= 0) {
-			System.out.println(enemy.getName() + " derrotado!");
+			System.out.println(enemy.getName() + " derrotado!\n");
 			enemy.setBaseHealth(enemyInitialHealth);
 		} else {
 			GameOver.gameOver();
@@ -71,7 +71,7 @@ public class FightController {
 		Double defenseValue = 0.0;
 		Random random = new Random();
 		
-		System.out.println(attacker.getName() + " usou " + attack.getName() + "\n");
+		System.out.println("\n" + attacker.getName() + " usou " + attack.getName() + "\n");
 		
 		// Calcula o valor base do ataque
 		if (attack.getUsesWeapon()) {			
