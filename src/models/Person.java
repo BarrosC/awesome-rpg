@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+
 public abstract class Person {
 	String name;
 	String description;
@@ -10,10 +12,11 @@ public abstract class Person {
 	Integer level;
 	Armor armor;
 	Weapon weapon;
+	ArrayList<Move> moves;
 	
-	public Person(String name, String description, String role, Double baseHealth,
-			Double baseDamage, Double baseDefense, Integer level, Armor armor,
-			Weapon weapon) {
+	public Person(String name, String description, String role,
+			Double baseHealth, Double baseDamage, Double baseDefense,
+			Integer level, Armor armor, Weapon weapon, ArrayList<Move> moves) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -24,6 +27,7 @@ public abstract class Person {
 		this.level = level;
 		this.armor = armor;
 		this.weapon = weapon;
+		this.moves = moves;
 	}
 
 	public String getName() {
@@ -96,6 +100,14 @@ public abstract class Person {
 
 	public void setWeapon(Weapon weapon) {
 		this.weapon = weapon;
+	}
+
+	public ArrayList<Move> getMoves() {
+		return moves;
+	}
+
+	public void setMoves(ArrayList<Move> moves) {
+		this.moves = moves;
 	}
 	
 }

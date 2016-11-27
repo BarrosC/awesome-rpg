@@ -1,7 +1,18 @@
 package views;
 
+import interfaces.FlyweightInterface;
+
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+
+import constants.ElementConstants;
+import constants.RoleConstants;
+import controllers.EnemyFlyweightFactory;
+import models.Armor;
+import models.Move;
+import models.Player;
+import models.Weapon;
 
 public class Main {
 
@@ -11,6 +22,22 @@ public class Main {
 		String choiceSignal = null;
 		String choiceTrilha = null;
 		String choiceOutroLado = null;
+		
+		// Configuração do jogador
+		Armor basicArmor = new Armor("Exo-Armadura XT32", "Armadura de alta resistência que aumenta as capacidades humanas.",
+							RoleConstants.PILOT, ElementConstants.NORMAL, 1, 6.0, 8.0);
+		
+		ArrayList<Move> playerMoves = new ArrayList<Move>();
+		playerMoves.add( new Move("Soco Turbina", "Soco forte que usa pequenas turbinas instaladas na luva do piloto.", ElementConstants.NORMAL, false, 2.0, 0));
+		
+		Player player = new Player("Cpt. Allister",
+									"Os avançados humanos de Marselha, com seus cabelos brancos, fala suave e grande inteligência e esclarecimento, podem lembrar rumores e lendas sobre qualquer assunto com um teste bem-sucedido de Inteligência.", 
+									RoleConstants.PILOT, 
+									150.00, 4.0, 6.0, 1, basicArmor, null, playerMoves, 0.0, 0.0);
+		
+		// Iniciar inimigos com padrão Flyweight
+		FlyweightInterface enemyFlyweight = new EnemyFlyweightFactory();
+		
 		
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
@@ -56,7 +83,7 @@ public class Main {
 				+ "[ESTABILIZAR. 250 MILIGRAMAS DE SANSUFETANIL : Aplicados]\n"
 				+ "[ATENÇÃO EFEITOS COLATERIAS TEMPORÁRIOS: Náusea, tontura, coordenação motora pode ser prejudicada.]\n\n"
 				
-				+ "Você abre as caixar de equipamento e pega um Rifle de Plama e uma Pistola de ions, esta que pode atordoar alvos.\n"
+				+ "Você abre as caixar de equipamento e pega um Rifle de Plasma e uma Pistola de ions, esta que pode atordoar alvos.\n"
 				+ "Ao olhar ao redor existe fio soltando faíscas que pode religar um painel que aciona o sinal de socorro, você sabe que o sinal pode ser sua unica chance de ser resgatado, \n"
 				+ "mas também sabe que derrubou sua nave ainda pode estar ouvindo... \n\n"
 				
@@ -64,6 +91,11 @@ public class Main {
 				+ "ACIONAR SINAL DE S.O.S ?\n\n"
 				+ "respostas disponíveis >>>> 'sim'  ou 'não' ou 'nao fazer nada'\n"
 				+ "||Aguardando decisão||");
+
+				Weapon plasmaRifle = new Weapon("Rifle de plasma", "Rifle que dispara feixes de plasma.", RoleConstants.PILOT, ElementConstants.NORMAL, 1, 6.0);
+				player.setWeapon(plasmaRifle);
+				playerMoves.add( new Move("Tiro de plasma", "Dispara um feixe de plasma concentrado.", ElementConstants.NORMAL, true, 2.0, 0));
+				
 				choiceSignal = scan.nextLine();
 		
 
@@ -121,36 +153,23 @@ public class Main {
 							+ "||Aguardando decisão||");
 						
 					choiceOutroLado = scan.nextLine();
-					if(choice.equalsIgnoreCase("ATACAR")){
+					if(choiceOutroLado.equalsIgnoreCase("ATACAR")){
 						System.out.println("Você pega seu rifle de plasma e mira no hostil mais próximo...\n");
 						
-						//iniciar mecanica de combate com players atacando primeiro
-						/*
-						 * ATRIBUTOS DO PLAYER
-						 * DANO: baseado no dano da arma (5pts + Dado de 8 Lados)
-						 * DEFESA: baseado na defesa do traje ( 10 pts + Dado de 6 lados)
-						 * 
-						 * ATRIBUTOS DA CRIATURA
-						 * DEFESA: 2 dados de 10 lados
-						 * ATAQUE: 2 Dados de 6 lados
-						 * 
-						 * TESTES DE SUCESSO
-						 * ATAQUE >>>> 1 D20 para Atacante versus 1D20 do Defensor
-						 * diferenças de 1 a 5pts = ataque com sucesso
-						 * diferenças de 6 a 10pts = ataque com sucesso parcial metade do dano
-						 * diferenças de 11 a 15pts = ataque com com sucesso pequeno 1/3 do dano
-						 * diferenças de +12pts = Ataque falhou
-						 * 
-						 * Caso o atacante tire 20 e o o dano é dobrado
-						 * todos danos são subtratidos das defesas do defensor tirando o resultado da quantidade de pts de vida
-						 */
+						//iniciar mecanica de combate com players atacando primeiro						
+						Fight.fight(player, true, enemyFlyweight);
+						Fight.fight(player, true, enemyFlyweight);
+						Fight.fight(player, true, enemyFlyweight);
 					}
 					
 					if(choiceOutroLado.equalsIgnoreCase("NÃO SE ENVOLVER")){
 						System.out.println("Você gostaria de ajudar, mas já tem seus próprios problemas...\n"
 								+ "mas quando se distancia mais criaturas aparecem a frente, e uma já te viu e está vindo em sua direção para atacá-lo.\n");
 						
-						//iniciar mecanica de combate com criaturas atacando primeiro
+						//iniciar mecanica de combate com criaturas atacando primeiro				
+						Fight.fight(player, false, enemyFlyweight);
+						Fight.fight(player, false, enemyFlyweight);
+						Fight.fight(player, false, enemyFlyweight);
 					}
 					
 				}
@@ -171,33 +190,16 @@ public class Main {
 				
 					if(choiceTrilha.equalsIgnoreCase("AJUDAR")){
 						System.out.println("ATACANDO CRIATURA");
-						
-						//iniciar mecanica de combate com players atacando primeiro
-						/*
-						 * ATRIBUTOS DO PLAYER
-						 * DANO: baseado no dano da arma (5pts + Dado de 8 Lados)
-						 * DEFESA: baseado na defesa do traje ( 10 pts + Dado de 6 lados)
-						 * 
-						 * ATRIBUTOS DA CRIATURA
-						 * DEFESA: 2 dados de 10 lados
-						 * ATAQUE: 2 Dados de 6 lados
-						 * 
-						 * TESTES DE SUCESSO
-						 * ATAQUE >>>> 1 D20 para Atacante versus 1D20 do Defensor
-						 * diferenças de 1 a 5pts = ataque com sucesso
-						 * diferenças de 6 a 10pts = ataque com sucesso parcial metade do dano
-						 * diferenças de 11 a 15pts = ataque com com sucesso pequeno 1/3 do dano
-						 * diferenças de +12pts = Ataque falhou
-						 * 
-						 * Caso o atacante tire 20 e o o dano é dobrado
-						 * todos danos são subtratidos das defesas do defensor tirando o resultado da quantidade de pts de vida
-						 */
+
 					}
 				
 					if(choiceTrilha.equalsIgnoreCase("não se envolver")){
 						System.out.println("VENDO OS NATIVOS MORREREM");
 						
-						//iniciar mecanica de combate com criaturas atacando primeiro
+						//iniciar mecanica de combate com criaturas atacando primeiro					
+						Fight.fight(player, true, enemyFlyweight);
+						Fight.fight(player, true, enemyFlyweight);
+						Fight.fight(player, true, enemyFlyweight);
 					}
 				
 				}
