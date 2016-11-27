@@ -4,16 +4,19 @@ public class Move {
 	String name;
 	String description;
 	String element;
+	Boolean usesWeapon;
 	Double baseDamage;
-	Integer manaCost;
-	
-	public Move(String name, String description, String type,
-			Double baseDamage, Integer manaCost) {
+	Integer staminaCost;
+
+	public Move(String name, String description, String element,
+			Boolean usesWeapon, Double baseDamage, Integer staminaCost) {
+		super();
 		this.name = name;
 		this.description = description;
-		this.element = type;
+		this.element = element;
+		this.usesWeapon = usesWeapon;
 		this.baseDamage = baseDamage;
-		this.manaCost = manaCost;
+		this.staminaCost = staminaCost;
 	}
 
 	public String getName() {
@@ -48,12 +51,28 @@ public class Move {
 		this.baseDamage = baseDamage;
 	}
 
-	public Integer getManaCost() {
-		return manaCost;
+	public String getElement() {
+		return element;
 	}
 
-	public void setManaCost(Integer manaCost) {
-		this.manaCost = manaCost;
+	public void setElement(String element) {
+		this.element = element;
+	}
+
+	public Boolean getUsesWeapon() {
+		return usesWeapon;
+	}
+
+	public void setUsesWeapon(Boolean usesWeapon) {
+		this.usesWeapon = usesWeapon;
+	}
+
+	public Integer getStaminaCost() {
+		return staminaCost;
+	}
+
+	public void setStaminaCost(Integer staminaCost) {
+		this.staminaCost = staminaCost;
 	}
 	
 }

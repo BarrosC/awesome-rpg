@@ -13,6 +13,6 @@ public abstract class EnemyController {
 		ArrayList<Object> arr = flyweight.getItems();
 		
 		Random random = new Random();
-		return (Enemy) arr.get(flyweight.getLength());
+		return (Enemy) arr.get(random.nextInt(flyweight.getLength()));
 	}
 }
