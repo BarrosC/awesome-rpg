@@ -316,14 +316,14 @@ public class Main {
 					Fight.fight(true);
 					
 					String FinalAtaque [] = {
-							"Ao final da batalha se visor volta ao modo passivo..."
+							"\n\nAo final da batalha o visor do capacete volta ao modo passivo...\n"
 							+ "[MODO DE COMBATE DESATIVADO]",
 							"[ARMAS AGUARDANDO]"
 					};
 					for (int i = 0;
 				             i < FinalAtaque.length;
 				             i++) {
-				            //Pausa de 1,0 segundos por linha
+				            //Pausa de 2,0 segundos por linha
 				            try {
 								Thread.sleep(1000);
 							} catch (InterruptedException e) {
@@ -334,21 +334,43 @@ public class Main {
 				            System.out.println(FinalAtaque[i]);
 				        }
 					
-					System.out.println("\nA Jovem começa a se aproximar...");
+					System.out.println("\nA Jovem começa a se aproximar...\n");
+					String suspenseNext [] = {
+							"...",
+							"......",
+							"........",
+							"............",
+							"..............",
+							"\n"
+							+ "Continua no CAPÍTULO 2"							
+						};
+					for (int i = 0;
+				             i < suspenseNext.length;
+				             i++) {
+				            //Pausa de 3,0 segundos por linha
+				            try {
+								Thread.sleep(3000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(suspenseNext[i]);
+				        }
 					
 				}
 				
 				
 				if(choiceOutroLado.equalsIgnoreCase("NÃO SE ENVOLVER") || choiceOutroLado.equalsIgnoreCase("NAO SE ENVOLVER")){
 					System.out.println("\nVocê gostaria de ajudar, mas já tem seus próprios problemas...\n"
-							+ "mas quando se distancia mais criaturas aparecem a frente, e uma já te viu e está vindo em sua direção para atacá-lo.\n"
+							+ "Uma das criaturas, com dificuldade, alcança jovem com suas garras, a garota cai desarcorda, mas ainda fora do alcance dos predadores."
+							+ "Quando você se distancia mais criaturas aparecem a frente, e uma já te viu e está vindo em sua direção para atacá-lo.\n"
 							+ "O visor do trage fica com aspecto avermelhado e mensagens são exibidas...");
 					
 					String ModoCombate[] = { 
 							"[MODO DE COMBATE ATIVADO]",
 							"[ARMAS PRONTAS]"							
 					};
-					
 					for (int i = 0;
 				             i < ModoCombate.length;
 				             i++) {
@@ -366,6 +388,50 @@ public class Main {
 					Fight.fight(false);
 					Fight.fight(false);
 					Fight.fight(false);
+					
+					String FinalAtaque [] = {
+							"\n\nAo final da batalha o visor do capacete volta ao modo passivo...\n"
+							+ "[MODO DE COMBATE DESATIVADO]",
+							"[ARMAS AGUARDANDO]"
+					};
+					for (int i = 0;
+				             i < FinalAtaque.length;
+				             i++) {
+				            //Pausa de 1,0 segundos por linha
+				            try {
+								Thread.sleep(1000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(FinalAtaque[i]);
+				        }
+					
+					System.out.println("\nApós derrotar os inimigos você resolve ir até a jovem desarcordada checar como ela está...\n");
+					String suspenseNext [] = {
+							"Chegando próximo a jovem você se surpreende com o que ve...",
+							"...",
+							"......",
+							"........",
+							"............",
+							"..............",
+							"\n"
+							+ "Continua no CAPÍTULO 2"							
+					};
+					for (int i = 0;
+				             i < suspenseNext.length;
+				             i++) {
+				            //Pausa de 3,0 segundos por linha
+				            try {
+								Thread.sleep(3000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(suspenseNext[i]);
+				        }
 				}
 			}
 			
