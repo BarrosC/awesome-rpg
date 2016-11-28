@@ -145,8 +145,8 @@ public class Main {
 		String Parte2[] = { "\nVocê abre uma das caixas de equipamento e pega um Rifle de Plasma e uma Pistola de ions, esta que pode atordoar alvos. \n"
 				+ "Ao olhar ao redor existe um fio soltando faíscas que pode religar um painel que aciona o sinal de socorro, você sabe que o sinal pode ser sua unica chance de ser resgatado, \n"
 				+ "mas também sabe que quem derrubou sua nave ainda pode estar ouvindo... \n"
-				+"ACIONAR SINAL DE S.O.S ?\n\n"
-				+ "respostas disponíveis >>>> 'SIM'  ou 'não' ou 'NÃO FAZER NADA'\n"
+				+ "ACIONAR SINAL DE S.O.S ?\n\n"
+				+ "respostas disponíveis >>>> 'SIM'  ou 'NÃO' ou 'NÃO FAZER NADA'\n"
 				+ "||Aguardando decisão||"				
 		};
 		
@@ -232,15 +232,15 @@ public class Main {
 						+ "os motores principais, ou oque sobrou de três deles nunca mais mais irão voar, \n"
 						+ "as armas principais já não existem mais... assim como uma parte da cauda com antena principal e os instrumentos de navegação e mapas\n"
 						+ "\n"
-						+ "Você ve um rastro de destroços e uma enorme trincheira de uns 500 metros de comprimento que a quedra abriu... e ao longe uma parte da nave ainda em chamas\n"
+						+ "Você ve um rastro de destroços e uma enorme trincheira de varios metros de comprimento devrivados da queda... é possível avistar ao longe uma parte da nave ainda em chamas\n"
 						+ "\n"
 						+ "Até o momento você não se depara com nenhum ser vivo no local, está de noite, a lua do planeta em sua fase mais cheia possibilita uma iluminação singular, em meio a escuridão\n"
 						+ "Você acha melhor explorar a área ao redor, análisar o terreno e garantir a segurança para analisar qual será o próximno passo\n\n"							
 				
 				
 				//tomada de decisão de ação - seguir caminho da trincheira e destroços, ou ir para outro lado												
-					+"o que fazer? 'seguir trilha' de destroços ou ir para o 'outro lado'?\n\n"
-					+ "respostas disponíveis >>>> 'seguir trilha' ou 'outro lado'\n"
+					+"O que fazer? Seguir de destroços ou ir para o outro lado?\n\n"
+					+ "respostas disponíveis >>>> Digite: 'SEGUIR TRILHA' ou 'OUTRO LADO'\n"
 					+ "||Aguardando decisão||"									
 				};
 				
@@ -263,14 +263,14 @@ public class Main {
 			if(choiceDirection.equalsIgnoreCase("OUTRO LADO")){
 				String Parte4a[] = {"\nVocê marca a nave no touch pad no ante-braço do trage e coloca em modo mapeamento, isto não deixará você se perder e ainda vai mapear o terreno.\n"
 						+ "A floresta é densa, árvores grandes e altas em um terreno irregular.\n"
-						+ "após andar alguns quilometros você ouve sons estranhos, animais talves?... \n"
+						+ "após andar alguns quilometros você ouve sons estranhos, animais talves?... \n\n"
 						+ "você vai investigar a direção de onde veio o som, mas antes que possa chegar ao local, ouve um grito de mulher.\n"
 						+ "ao chegar ao local você ses depara com criaturas estranhas que você ainda não tinha encontrado em suas viagens e batalhas.\n"
 						+ "essas criatuaras estão tentando pegar uma jovem que tenta se esconder, embora com dificuldade, em uma caverna em um terreno elevado.\n"
 						
 					//tomada de decisão de ação - Atacar e ajdudar ou não se envolver
 					+ "você consegue identificar 3 hostis, e se pergunta se deve se envolver ou seguir seu caminho...\n"
-					+ "respostas disponíveis >>>> 'Atacar' ou 'não se envolver'\n"
+					+ "respostas disponíveis >>>> digite: 'ATACAR' ou 'NÃO SE ENVOLVER'\n"
 					+ "||Aguardando decisão||"						
 				};
 				
@@ -316,7 +316,8 @@ public class Main {
 					Fight.fight(true);
 					
 					String FinalAtaque [] = {
-							"\n\nAo final da batalha o visor do capacete volta ao modo passivo...\n"
+							"\n=============================================================================\n"
+							+"\n\nAo final da batalha o visor do capacete volta ao modo passivo...\n"
 							+ "[MODO DE COMBATE DESATIVADO]",
 							"[ARMAS AGUARDANDO]"
 					};
@@ -334,7 +335,9 @@ public class Main {
 				            System.out.println(FinalAtaque[i]);
 				        }
 					
-					System.out.println("\nA Jovem começa a se aproximar...\n");
+					System.out.println(
+							"\nA Jovem começa a se aproximar...\n"
+							+ "Conforme ela se aproxima, você se surpreende com o que seus olhos vêem...");
 					String suspenseNext [] = {
 							"...",
 							"......",
@@ -390,7 +393,8 @@ public class Main {
 					Fight.fight(false);
 					
 					String FinalAtaque [] = {
-							"\n\nAo final da batalha o visor do capacete volta ao modo passivo...\n"
+							"\n=============================================================================\n"
+							+ "\nAo final da batalha o visor do capacete volta ao modo passivo...\n"
 							+ "[MODO DE COMBATE DESATIVADO]",
 							"[ARMAS AGUARDANDO]"
 					};
@@ -410,7 +414,7 @@ public class Main {
 					
 					System.out.println("\nApós derrotar os inimigos você resolve ir até a jovem desarcordada checar como ela está...\n");
 					String suspenseNext [] = {
-							"Chegando próximo a jovem você se surpreende com o que ve...",
+							"Chegando próximo a jovem você se surpreende com o que seus olhos vêem...",
 							"...",
 							"......",
 							"........",
@@ -445,7 +449,7 @@ public class Main {
 						
 					//tomada de decisão	
 					+ "você pode tentar ajudá-los, ou não se envolver, mas dificilmente passará desbercebido quando a criatura acabar com eles.\n"
-					+ "respostas disponíveis >>>> 'AJUDAR' nativos ou 'NÃO SE ENVOLVER'\n"
+					+ "respostas disponíveis >>>> digite: 'AJUDAR' nativos ou 'NÃO SE ENVOLVER'\n"
 					+ "||Aguardando decisão||"							
 				};
 				
@@ -466,7 +470,8 @@ public class Main {
 			
 			
 				if(choiceTrilha.equalsIgnoreCase("AJUDAR")){						
-					System.out.println("\nVocê se prepara para atacar a criatura hostil... o visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
+					System.out.println("\nVocê se prepara para atacar a criatura hostil...\n"
+							+ "o visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
 					String ModoCombate[] = { 
 							"[MODO DE COMBATE ATIVADO]",
 							"[ARMAS PRONTAS]"							
@@ -487,6 +492,51 @@ public class Main {
 				        }
 					
 					Fight.fight(true);
+					
+					String FinalAtaque [] = {
+							"\n=============================================================================\n"
+							+"\n\nAo final da batalha o visor do capacete volta ao modo passivo...\n"
+							+ "[MODO DE COMBATE DESATIVADO]",
+							"[ARMAS AGUARDANDO]"
+					};
+					for (int i = 0;
+				             i < FinalAtaque.length;
+				             i++) {
+				            //Pausa de 1,0 segundos por linha
+				            try {
+								Thread.sleep(1000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(FinalAtaque[i]);
+				        }
+					
+					System.out.println("\nApós derrotar o inimigo você vai ao encontro do grupo de Nativos...\n");
+					String suspenseNext [] = {
+							"Chegando próximo à eles você se surpreende com o que seus olhos vêem...",
+							"...",
+							"......",
+							"........",
+							"............",
+							"..............",
+							"\n"
+							+ "Continua no CAPÍTULO 2"							
+					};
+					for (int i = 0;
+				             i < suspenseNext.length;
+				             i++) {
+				            //Pausa de 3,0 segundos por linha
+				            try {
+								Thread.sleep(3000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(suspenseNext[i]);
+				        }
 				}
 			
 				if(choiceTrilha.equalsIgnoreCase("NÃO SE ENVOLVER") || choiceTrilha.equalsIgnoreCase("NAO SE ENVOLVER")){
@@ -519,6 +569,51 @@ public class Main {
 					Fight.fight(true);
 					Fight.fight(true);
 					Fight.fight(true);
+					
+					String FinalAtaque [] = {
+							"\n=============================================================================\n"
+							+"\n\nAo final da batalha o visor do capacete volta ao modo passivo...\n"
+							+ "[MODO DE COMBATE DESATIVADO]",
+							"[ARMAS AGUARDANDO]"
+					};
+					for (int i = 0;
+				             i < FinalAtaque.length;
+				             i++) {
+				            //Pausa de 1,0 segundos por linha
+				            try {
+								Thread.sleep(1000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(FinalAtaque[i]);
+				        }
+					
+					System.out.println("\nApós derrotar o inimigo você vai até os sobreviventes...\n");
+					String suspenseNext [] = {
+							"Chegando próximo à eles você se surpreende com o que seus olhos vêem...",
+							"...",
+							"......",
+							"........",
+							"............",
+							"..............",
+							"\n"
+							+ "Continua no CAPÍTULO 2"							
+					};
+					for (int i = 0;
+				             i < suspenseNext.length;
+				             i++) {
+				            //Pausa de 3,0 segundos por linha
+				            try {
+								Thread.sleep(3000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(suspenseNext[i]);
+				        }
 				}
 			
 			}
