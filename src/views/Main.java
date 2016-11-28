@@ -219,225 +219,8 @@ public class Main {
 						
 						choice = "sim";
 				
-				if(choiceSignal.equalsIgnoreCase("NÃO") || choiceSignal.equalsIgnoreCase("NAO") || choice.equalsIgnoreCase("SIM")){
-					
-					String Parte3a[] = { "\nVocê se dirige a saída da nave...\n"
-							+ "A porta se abre e ao sair da nave você se depara com uma clareira que a queda abriu em meio a uma floresta...\n"
-							+ "ao dar uma breve olhada para sua nave, ve que os danos são catrastróficos...\n"
-							+ "os motores principais, ou oque sobrou de três deles nunca mais mais irão voar, \n"
-							+ "as armas principais já não existem mais... assim como uma parte da cauda com antena principal e os instrumentos de navegação e mapas\n"
-							+ "\n"
-							+ "Você ve um rastro de destroços e uma enorme trincheira de uns 500 metros de comprimento que a quedra abriu... e ao longe uma parte da nave ainda em chamas\n"
-							+ "\n"
-							+ "Até o momento você não se depara com nenhum ser vivo no local, está de noite, a lua do planeta em sua fase mais cheia possibilita uma iluminação singular, em meio a escuridão\n"
-							+ "Você acha melhor explorar a área ao redor, análisar o terreno e garantir a segurança para analisar qual será o próximno passo\n\n"							
-					
-					
-					//tomada de decisão de ação - seguir caminho da trincheira e destroços, ou ir para outro lado												
-						+"o que fazer? 'seguir trilha' de destroços ou ir para o 'outro lado'?\n\n"
-						+ "respostas disponíveis >>>> 'seguir trilha' ou 'outro lado'\n"
-						+ "||Aguardando decisão||"									
-					};
-					
-					
-					for (int i = 0;
-				             i < Parte3a.length;
-				             i++) {
-				            //Pausa de 3,5 segundos por linha
-				            try {
-								Thread.sleep(4000);
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-				            //Print a message
-				            System.out.println(Parte3a[i]);
-				        }
-					
 				
-				choice = scan.nextLine();
-				
-				
-				if(choice.equalsIgnoreCase("OUTRO LADO")){
-					String Parte4a[] = {"\nVocê marca a nave no touch pad no ante-braço do trage e coloca em modo mapeamento, isto não deixará você se perder e ainda vai mapear o terreno.\n"
-							+ "A floresta é densa, árvores grandes e altas em um terreno irregular.\n"
-							+ "após andar alguns quilometros você ouve sons estranhos, animais talves?... \n"
-							+ "você vai investigar a direção de onde veio o som, mas antes que possa chegar ao local, ouve um grito de mulher.\n"
-							+ "ao chegar ao local você ses depara com criaturas estranhas que você ainda não tinha encontrado em suas viagens e batalhas.\n"
-							+ "essas criatuaras estão tentando pegar uma jovem que tenta se esconder, embora com dificuldade, em uma caverna em um terreno elevado.\n"
-							
-						//tomada de decisão de ação - Atacar e ajdudar ou não se envolver
-						+ "você consegue identificar 3 hostis, e se pergunta se deve se envolver ou seguir seu caminho...\n"
-						+ "respostas disponíveis >>>> 'Atacar' ou 'não se envolver'\n"
-						+ "||Aguardando decisão||"
-							
-					};
-					
-					for (int i = 0;
-				             i < Parte4a.length;
-				             i++) {
-				            //Pausa de 3,5 segundos por linha
-				            try {
-								Thread.sleep(2000);
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-				            //Print a message
-				            System.out.println(Parte4a[i]);
-				        }
-					choiceOutroLado = scan.nextLine();
-					
-					if(choiceOutroLado.equalsIgnoreCase("ATACAR")){
-						System.out.println("\nVocê se prepara para atacar o hostil mais próximo... So visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
-						String ModoCombate[] = { 
-								"[MODO DE COMBATE ATIVADO]",
-								"[ARMAS PRONTAS]"
-								
-						};
-						for (int i = 0;
-					             i < ModoCombate.length;
-					             i++) {
-					            //Pausa de 3,5 segundos por linha
-					            try {
-									Thread.sleep(1000);
-								} catch (InterruptedException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-					            //Print a message
-					            System.out.println(ModoCombate[i]);
-					        }
-						
-						//iniciar mecanica de combate com players atacando primeiro						
-						Fight.fight(player, true, enemyFlyweight);
-						Fight.fight(player, true, enemyFlyweight);
-						Fight.fight(player, true, enemyFlyweight);
-					}
-					
-					
-					
-					if(choiceOutroLado.equalsIgnoreCase("NÃO SE ENVOLVER")){
-						System.out.println("\nVocê gostaria de ajudar, mas já tem seus próprios problemas...\n"
-								+ "mas quando se distancia mais criaturas aparecem a frente, e uma já te viu e está vindo em sua direção para atacá-lo.\n"
-								+ "O visor do trage fica com aspecto avermelhado e mensagens são exibidas...");
-						
-						String ModoCombate[] = { 
-								"[MODO DE COMBATE ATIVADO]",
-								"[ARMAS PRONTAS]"
-								
-						};
-						for (int i = 0;
-					             i < ModoCombate.length;
-					             i++) {
-					            //Pausa de 3,5 segundos por linha
-					            try {
-									Thread.sleep(1000);
-								} catch (InterruptedException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-					            //Print a message
-					            System.out.println(ModoCombate[i]);
-					        }
-						//iniciar mecanica de combate com criaturas atacando primeiro				
-						Fight.fight(player, false, enemyFlyweight);
-						Fight.fight(player, false, enemyFlyweight);
-						Fight.fight(player, false, enemyFlyweight);
-					}
-					
-				}
-				
-				if(choice.equalsIgnoreCase("SEGUIR TRILHA")){
-					String Parte4b[] = {"A trilha está cheia de destroços da sua nave, alguns ainda estão em chamas.\n"
-							+ "você chega ao que restou da cauda da nave, entra e ve que a maioria dos equipamentos, poor algum milagre ainda estão intactos, mas como estão apenas com a energia auxiliar, \n"
-							+ "um diagnóstico completo só poderá ser feito quando a energia principal for restauranda, infelizmente as baterias de alta potência estão na outra metade da nave, algo terá que ser deslocado...\n"
-							+ "talvez fazer upload de dados dos mapas de navegação e tentar carrega-los na outra parte da nave...\n"
-							+ "mas antes que pudesse fazer algo, o som do rugido de alguma criatura ferroz preenche o silêncio da noite.\n"
-							+ "Ao olhar para fora, você observa que vários humanóides nativos do planeta estão se aproximando correndo e eufóricos, fugindo de uma criatura enorme que está se aproximando cada vez mais.\n"
-							
-						//tomada de decisão	
-						+"você pode tentar ajudá-los, ou não se envolver, mas dificilmente passará desbercebido quando a criatura acabar com eles.\n"
-						+ "respostas disponíveis >>>> 'Ajudar' Nativos ou 'não se envolver'\n"
-						+ "||Aguardando decisão||"							
-					};
-					for (int i = 0;
-				             i < Parte4b.length;
-				             i++) {
-				            //Pausa de 3,5 segundos por linha
-				            try {
-								Thread.sleep(2000);
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-				            //Print a message
-				            System.out.println(Parte4b[i]);
-				        }
-					choiceTrilha = scan.nextLine();
-					
-					
-				
-					if(choiceTrilha.equalsIgnoreCase("AJUDAR")){						
-						System.out.println("\nVocê se prepara para atacar o hosti... o visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
-						String ModoCombate[] = { 
-								"[MODO DE COMBATE ATIVADO]",
-								"[ARMAS PRONTAS]"
-								
-						};
-						for (int i = 0;
-					             i < ModoCombate.length;
-					             i++) {
-					            //Pausa de 3,5 segundos por linha
-					            try {
-									Thread.sleep(1000);
-								} catch (InterruptedException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-					            //Print a message
-					            System.out.println(ModoCombate[i]);
-					        }
-						
-						Fight.fight(player, true, enemyFlyweight);
-					}
-				
-					if(choiceTrilha.equalsIgnoreCase("não se envolver")){
-						System.out.println("A criatura da uma patada devastadora, o grito estridente de um dos nativos ecoua e é para repentinamente quando seu corpo vai de encontro ao troco de uma arvore,"
-								+ "é possível ouvir o som dos ossos se partindo, e o corpo cai ao chão sem vida. A criatura para um instante para devorar o corpo de sua presa, em uma única abocanhada..."
-								+ "Os outros três nativos estão vindo em sua direção, gritando. Eles podem te ver e alcançam os destroços da nave onde você está."
-								+ "A criatura se volta para o local, você não tem opção a não ser lutar."
-								+ "O visor do trage fica com aspecto avermelhado e mensagens são exibidas...");
-						String ModoCombate[] = { 
-								"[MODO DE COMBATE ATIVADO]",
-								"[ARMAS PRONTAS]"
-								
-						};
-						for (int i = 0;
-					             i < ModoCombate.length;
-					             i++) {
-					            //Pausa de 3,5 segundos por linha
-					            try {
-									Thread.sleep(1000);
-								} catch (InterruptedException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-					            //Print a message
-					            System.out.println(ModoCombate[i]);
-					        }
-						
-						//iniciar mecanica de combate com criaturas atacando primeiro					
-						Fight.fight(player, true, enemyFlyweight);
-						Fight.fight(player, true, enemyFlyweight);
-						Fight.fight(player, true, enemyFlyweight);
-					}
-				
-				}
-			
-				}
-			}
-			else{
+			} else if (!choiceSignal.equalsIgnoreCase("NÃO") && !choiceSignal.equalsIgnoreCase("NAO") && !choice.equalsIgnoreCase("SIM")) {
 				System.out.println("você se senta em uma das caixas de equipamento, quando percebe que uma célula de combustível se solta do compartimento de carga acima, se deslocando próximo ao fio que que estava soltando faíscas perto do painel...\n"
 						+ "você tenta fazer algo, mas não alcança a célula de combustível a tempo, o curto-circuito causa uma imensa explosão...\n\n"
 						+ "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"
@@ -448,6 +231,224 @@ public class Main {
 						+ "[A NAVE FOI COMLETAMENTE DESTRUÍDA]\n"
 						+ "[VOCÊ ESTÁ MORTO!]");
 			}
+				
+			if(choiceSignal.equalsIgnoreCase("NÃO") || choiceSignal.equalsIgnoreCase("NAO") || choice.equalsIgnoreCase("SIM")){
+					
+				String Parte3a[] = { "\nVocê se dirige a saída da nave...\n"
+						+ "A porta se abre e ao sair da nave você se depara com uma clareira que a queda abriu em meio a uma floresta...\n"
+						+ "ao dar uma breve olhada para sua nave, ve que os danos são catrastróficos...\n"
+						+ "os motores principais, ou oque sobrou de três deles nunca mais mais irão voar, \n"
+						+ "as armas principais já não existem mais... assim como uma parte da cauda com antena principal e os instrumentos de navegação e mapas\n"
+						+ "\n"
+						+ "Você ve um rastro de destroços e uma enorme trincheira de uns 500 metros de comprimento que a quedra abriu... e ao longe uma parte da nave ainda em chamas\n"
+						+ "\n"
+						+ "Até o momento você não se depara com nenhum ser vivo no local, está de noite, a lua do planeta em sua fase mais cheia possibilita uma iluminação singular, em meio a escuridão\n"
+						+ "Você acha melhor explorar a área ao redor, análisar o terreno e garantir a segurança para analisar qual será o próximno passo\n\n"							
+				
+				
+				//tomada de decisão de ação - seguir caminho da trincheira e destroços, ou ir para outro lado												
+					+"o que fazer? 'seguir trilha' de destroços ou ir para o 'outro lado'?\n\n"
+					+ "respostas disponíveis >>>> 'seguir trilha' ou 'outro lado'\n"
+					+ "||Aguardando decisão||"									
+				};
+				
+				
+				for (int i = 0;
+			             i < Parte3a.length;
+			             i++) {
+			            //Pausa de 3,5 segundos por linha
+			            try {
+							Thread.sleep(4000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+			            //Print a message
+			            System.out.println(Parte3a[i]);
+			        }
+				
+			
+			choice = scan.nextLine();
+			
+			
+			if(choice.equalsIgnoreCase("OUTRO LADO")){
+				String Parte4a[] = {"\nVocê marca a nave no touch pad no ante-braço do trage e coloca em modo mapeamento, isto não deixará você se perder e ainda vai mapear o terreno.\n"
+						+ "A floresta é densa, árvores grandes e altas em um terreno irregular.\n"
+						+ "após andar alguns quilometros você ouve sons estranhos, animais talves?... \n"
+						+ "você vai investigar a direção de onde veio o som, mas antes que possa chegar ao local, ouve um grito de mulher.\n"
+						+ "ao chegar ao local você ses depara com criaturas estranhas que você ainda não tinha encontrado em suas viagens e batalhas.\n"
+						+ "essas criatuaras estão tentando pegar uma jovem que tenta se esconder, embora com dificuldade, em uma caverna em um terreno elevado.\n"
+						
+					//tomada de decisão de ação - Atacar e ajdudar ou não se envolver
+					+ "você consegue identificar 3 hostis, e se pergunta se deve se envolver ou seguir seu caminho...\n"
+					+ "respostas disponíveis >>>> 'Atacar' ou 'não se envolver'\n"
+					+ "||Aguardando decisão||"
+						
+				};
+				
+				for (int i = 0;
+			             i < Parte4a.length;
+			             i++) {
+			            //Pausa de 3,5 segundos por linha
+			            try {
+							Thread.sleep(2000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+			            //Print a message
+			            System.out.println(Parte4a[i]);
+			        }
+				choiceOutroLado = scan.nextLine();
+				
+				if(choiceOutroLado.equalsIgnoreCase("ATACAR")){
+					System.out.println("\nVocê se prepara para atacar o hostil mais próximo... So visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
+					String ModoCombate[] = { 
+							"[MODO DE COMBATE ATIVADO]",
+							"[ARMAS PRONTAS]"
+							
+					};
+					for (int i = 0;
+				             i < ModoCombate.length;
+				             i++) {
+				            //Pausa de 3,5 segundos por linha
+				            try {
+								Thread.sleep(1000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(ModoCombate[i]);
+				        }
+					
+					//iniciar mecanica de combate com players atacando primeiro						
+					Fight.fight(player, true, enemyFlyweight);
+					Fight.fight(player, true, enemyFlyweight);
+					Fight.fight(player, true, enemyFlyweight);
+				}
+				
+				
+				
+				if(choiceOutroLado.equalsIgnoreCase("NÃO SE ENVOLVER")){
+					System.out.println("\nVocê gostaria de ajudar, mas já tem seus próprios problemas...\n"
+							+ "mas quando se distancia mais criaturas aparecem a frente, e uma já te viu e está vindo em sua direção para atacá-lo.\n"
+							+ "O visor do trage fica com aspecto avermelhado e mensagens são exibidas...");
+					
+					String ModoCombate[] = { 
+							"[MODO DE COMBATE ATIVADO]",
+							"[ARMAS PRONTAS]"
+							
+					};
+					for (int i = 0;
+				             i < ModoCombate.length;
+				             i++) {
+				            //Pausa de 3,5 segundos por linha
+				            try {
+								Thread.sleep(1000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(ModoCombate[i]);
+				        }
+					//iniciar mecanica de combate com criaturas atacando primeiro				
+					Fight.fight(player, false, enemyFlyweight);
+					Fight.fight(player, false, enemyFlyweight);
+					Fight.fight(player, false, enemyFlyweight);
+				}
+				
+			}
+			
+			if(choice.equalsIgnoreCase("SEGUIR TRILHA")){
+				String Parte4b[] = {"A trilha está cheia de destroços da sua nave, alguns ainda estão em chamas.\n"
+						+ "você chega ao que restou da cauda da nave, entra e ve que a maioria dos equipamentos, poor algum milagre ainda estão intactos, mas como estão apenas com a energia auxiliar, \n"
+						+ "um diagnóstico completo só poderá ser feito quando a energia principal for restauranda, infelizmente as baterias de alta potência estão na outra metade da nave, algo terá que ser deslocado...\n"
+						+ "talvez fazer upload de dados dos mapas de navegação e tentar carrega-los na outra parte da nave...\n"
+						+ "mas antes que pudesse fazer algo, o som do rugido de alguma criatura ferroz preenche o silêncio da noite.\n"
+						+ "Ao olhar para fora, você observa que vários humanóides nativos do planeta estão se aproximando correndo e eufóricos, fugindo de uma criatura enorme que está se aproximando cada vez mais.\n"
+						
+					//tomada de decisão	
+					+"você pode tentar ajudá-los, ou não se envolver, mas dificilmente passará desbercebido quando a criatura acabar com eles.\n"
+					+ "respostas disponíveis >>>> 'Ajudar' Nativos ou 'não se envolver'\n"
+					+ "||Aguardando decisão||"							
+				};
+				for (int i = 0;
+			             i < Parte4b.length;
+			             i++) {
+			            //Pausa de 3,5 segundos por linha
+			            try {
+							Thread.sleep(2000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+			            //Print a message
+			            System.out.println(Parte4b[i]);
+			        }
+				choiceTrilha = scan.nextLine();
+				
+				
+			
+				if(choiceTrilha.equalsIgnoreCase("AJUDAR")){						
+					System.out.println("\nVocê se prepara para atacar o hosti... o visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
+					String ModoCombate[] = { 
+							"[MODO DE COMBATE ATIVADO]",
+							"[ARMAS PRONTAS]"
+							
+					};
+					for (int i = 0;
+				             i < ModoCombate.length;
+				             i++) {
+				            //Pausa de 3,5 segundos por linha
+				            try {
+								Thread.sleep(1000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(ModoCombate[i]);
+				        }
+					
+					Fight.fight(player, true, enemyFlyweight);
+				}
+			
+				if(choiceTrilha.equalsIgnoreCase("não se envolver")){
+					System.out.println("A criatura da uma patada devastadora, o grito estridente de um dos nativos ecoua e é para repentinamente quando seu corpo vai de encontro ao troco de uma arvore,"
+							+ "é possível ouvir o som dos ossos se partindo, e o corpo cai ao chão sem vida. A criatura para um instante para devorar o corpo de sua presa, em uma única abocanhada..."
+							+ "Os outros três nativos estão vindo em sua direção, gritando. Eles podem te ver e alcançam os destroços da nave onde você está."
+							+ "A criatura se volta para o local, você não tem opção a não ser lutar."
+							+ "O visor do trage fica com aspecto avermelhado e mensagens são exibidas...");
+					String ModoCombate[] = { 
+							"[MODO DE COMBATE ATIVADO]",
+							"[ARMAS PRONTAS]"
+							
+					};
+					for (int i = 0;
+				             i < ModoCombate.length;
+				             i++) {
+				            //Pausa de 3,5 segundos por linha
+				            try {
+								Thread.sleep(1000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(ModoCombate[i]);
+				        }
+					
+					//iniciar mecanica de combate com criaturas atacando primeiro					
+					Fight.fight(player, true, enemyFlyweight);
+					Fight.fight(player, true, enemyFlyweight);
+					Fight.fight(player, true, enemyFlyweight);
+				}
+			
+			}
+			
+		}
 	}
 
 }
