@@ -104,11 +104,11 @@ public class Main {
 		
 		
 		String InicializandoTraje[] = {
-				"-- Exo-Armadura XT32 --\n"
-				+"  [CARREGANDO DADOS]\n",
-				"     [Inicializando...]",
-				"     [Inicializando...]",
-				"     [Inicializando...]\n",
+				"---EXO-ARMADURA XT32---\n"
+				+" [-CARREGANDO DADOS-]",
+				"       [Inicializando...]",
+				"       [Inicializando...]",
+				"       [Inicializando...]\n",
 	            " [USUÁRIO IDENTIFICADO]\n"
 	        };
 		
@@ -156,7 +156,7 @@ public class Main {
 				+ "Ao olhar ao redor existe um fio soltando faíscas que pode religar um painel que aciona o sinal de socorro, você sabe que o sinal pode ser sua unica chance de ser resgatado, \n"
 				+ "mas também sabe que quem derrubou sua nave ainda pode estar ouvindo... \n"
 				+"ACIONAR SINAL DE S.O.S ?\n\n"
-				+ "respostas disponíveis >>>> 'sim'  ou 'não' ou 'nao fazer nada'\n"
+				+ "respostas disponíveis >>>> 'SIM'  ou 'não' ou 'NÃO FAZER NADA'\n"
 				+ "||Aguardando decisão||"				
 		};
 		
@@ -198,8 +198,7 @@ public class Main {
 							"[ALCANCE DO SINAL COMPROMETIDO]",
 							"[TRANSMITINDO APENAS PARA SISTEMAS PLANETÁRIOS PRÓXIMOS]",
 							"[:::: RECOMENDAÇÃO ::::]",
-							"[REPARAR A ANTENA PRINCIPAL PARA TRANSMITIR SINAL INTER-ESTELAR]\n\n"
-							
+							"[REPARAR A ANTENA PRINCIPAL PARA TRANSMITIR SINAL INTER-ESTELAR]\n\n"							
 					};
 					
 					for (int i = 0;
@@ -221,15 +220,20 @@ public class Main {
 				
 				
 			} else if (!choiceSignal.equalsIgnoreCase("NÃO") && !choiceSignal.equalsIgnoreCase("NAO") && !choice.equalsIgnoreCase("SIM")) {
-				System.out.println("você se senta em uma das caixas de equipamento, quando percebe que uma célula de combustível se solta do compartimento de carga acima, se deslocando próximo ao fio que que estava soltando faíscas perto do painel...\n"
-						+ "você tenta fazer algo, mas não alcança a célula de combustível a tempo, o curto-circuito causa uma imensa explosão...\n\n"
+				System.out.println("você se senta em uma das caixas de equipamento, quando percebe que uma célula de combustível exposta se solta "
+						+ "do compartimento de carga acima, se deslocando para próximo do fio que que estava soltando faíscas perto do painel.\n"
+						+ "Você tenta fazer algo, mas não alcança a célula de combustível a tempo, que encosta nos cabos causando um curto-circuito, "
+						+ "resultando em uma imensa explosão...\n\n"
+						
 						+ "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n"
 						+ "░█▀▀ ░█▀█ ░█ ░█▀▀ ░░█▀▀ ░█▀█░█ ░█░░░░\n"
 						+ "░█▀▀ ░█▀▀ ░█ ░█ ░░░░█▀▀ ░█▀█░█ ░█ ░░░\n"
 						+ "░▀▀▀ ░▀ ░░░▀ ░▀▀▀ ░░▀░░ ░▀░▀░▀ ░▀▀▀░░\n"
 						+ "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n\n"
-						+ "[A NAVE FOI COMLETAMENTE DESTRUÍDA]\n"
-						+ "[VOCÊ ESTÁ MORTO!]");
+						
+						+ "[A NAVE FOI COMLETAMENTE DESTRUÍDA]\n\n"
+						+ "[VOCÊ ESTÁ MORTO!]\n"
+						+ "===================================");
 			}
 				
 			if(choiceSignal.equalsIgnoreCase("NÃO") || choiceSignal.equalsIgnoreCase("NAO") || choice.equalsIgnoreCase("SIM")){
@@ -282,8 +286,7 @@ public class Main {
 					//tomada de decisão de ação - Atacar e ajdudar ou não se envolver
 					+ "você consegue identificar 3 hostis, e se pergunta se deve se envolver ou seguir seu caminho...\n"
 					+ "respostas disponíveis >>>> 'Atacar' ou 'não se envolver'\n"
-					+ "||Aguardando decisão||"
-						
+					+ "||Aguardando decisão||"						
 				};
 				
 				for (int i = 0;
@@ -302,12 +305,12 @@ public class Main {
 				choiceOutroLado = scan.nextLine();
 				
 				if(choiceOutroLado.equalsIgnoreCase("ATACAR")){
-					System.out.println("\nVocê se prepara para atacar o hostil mais próximo... So visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
+					System.out.println("\nVocê se prepara para atacar o hostil mais próximo... O visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
 					String ModoCombate[] = { 
 							"[MODO DE COMBATE ATIVADO]",
-							"[ARMAS PRONTAS]"
-							
+							"[ARMAS PRONTAS]"							
 					};
+					
 					for (int i = 0;
 				             i < ModoCombate.length;
 				             i++) {
@@ -337,9 +340,9 @@ public class Main {
 					
 					String ModoCombate[] = { 
 							"[MODO DE COMBATE ATIVADO]",
-							"[ARMAS PRONTAS]"
-							
+							"[ARMAS PRONTAS]"							
 					};
+					
 					for (int i = 0;
 				             i < ModoCombate.length;
 				             i++) {
@@ -371,9 +374,10 @@ public class Main {
 						
 					//tomada de decisão	
 					+"você pode tentar ajudá-los, ou não se envolver, mas dificilmente passará desbercebido quando a criatura acabar com eles.\n"
-					+ "respostas disponíveis >>>> 'Ajudar' Nativos ou 'não se envolver'\n"
+					+ "respostas disponíveis >>>> 'AJUDAR' nativos ou 'NÃO SE ENVOLVER'\n"
 					+ "||Aguardando decisão||"							
 				};
+				
 				for (int i = 0;
 			             i < Parte4b.length;
 			             i++) {
@@ -395,9 +399,9 @@ public class Main {
 					System.out.println("\nVocê se prepara para atacar o hosti... o visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
 					String ModoCombate[] = { 
 							"[MODO DE COMBATE ATIVADO]",
-							"[ARMAS PRONTAS]"
-							
+							"[ARMAS PRONTAS]"							
 					};
+					
 					for (int i = 0;
 				             i < ModoCombate.length;
 				             i++) {
@@ -423,9 +427,9 @@ public class Main {
 							+ "O visor do trage fica com aspecto avermelhado e mensagens são exibidas...");
 					String ModoCombate[] = { 
 							"[MODO DE COMBATE ATIVADO]",
-							"[ARMAS PRONTAS]"
-							
+							"[ARMAS PRONTAS]"							
 					};
+					
 					for (int i = 0;
 				             i < ModoCombate.length;
 				             i++) {
