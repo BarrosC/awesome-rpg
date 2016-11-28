@@ -20,6 +20,8 @@ public class Main {
 		
 		String choice = null;
 		String choiceSignal = null;
+		String choiceAfterSignal = null;
+		String choiceDirection = null;
 		String choiceTrilha = null;
 		String choiceOutroLado = null;
 		
@@ -69,7 +71,7 @@ public class Main {
 				);
 		
 		System.out.println("Pressione ENTER para iniciar sua jornada");
-		choice = scan.nextLine();
+		scan.nextLine();
 		
 		System.out.println("**** Capítulo 1 - O Local Queda ****");
 		
@@ -213,13 +215,10 @@ public class Main {
 							}
 				            //Print a message
 				            System.out.println(SinalDeSocorro[i]);
-				        }				
-				
-						
-						choice = "sim";
-				
-				
-			} else if (!choiceSignal.equalsIgnoreCase("NÃO") && !choiceSignal.equalsIgnoreCase("NAO") && !choice.equalsIgnoreCase("SIM")) {
+				            choiceAfterSignal = "sim";				            
+				        }
+					
+			}else if (!choiceSignal.equalsIgnoreCase("NÃO") && !choiceSignal.equalsIgnoreCase("NAO") && !choiceSignal.equalsIgnoreCase("SIM")) {
 				System.out.println("você se senta em uma das caixas de equipamento, quando percebe que uma célula de combustível exposta se solta "
 						+ "do compartimento de carga acima, se deslocando para próximo do fio que que estava soltando faíscas perto do painel.\n"
 						+ "Você tenta fazer algo, mas não alcança a célula de combustível a tempo, que encosta nos cabos causando um curto-circuito, "
@@ -236,7 +235,7 @@ public class Main {
 						+ "===================================");
 			}
 				
-			if(choiceSignal.equalsIgnoreCase("NÃO") || choiceSignal.equalsIgnoreCase("NAO") || choice.equalsIgnoreCase("SIM")){
+			if(choiceSignal.equalsIgnoreCase("NÃO") || choiceSignal.equalsIgnoreCase("NAO") || choiceAfterSignal.equalsIgnoreCase("SIM")){
 					
 				String Parte3a[] = { "\nVocê se dirige a saída da nave...\n"
 						+ "A porta se abre e ao sair da nave você se depara com uma clareira que a queda abriu em meio a uma floresta...\n"
@@ -271,11 +270,9 @@ public class Main {
 			            System.out.println(Parte3a[i]);
 			        }
 				
+				choiceDirection = scan.nextLine();			
 			
-			choice = scan.nextLine();
-			
-			
-			if(choice.equalsIgnoreCase("OUTRO LADO")){
+			if(choiceDirection.equalsIgnoreCase("OUTRO LADO")){
 				String Parte4a[] = {"\nVocê marca a nave no touch pad no ante-braço do trage e coloca em modo mapeamento, isto não deixará você se perder e ainda vai mapear o terreno.\n"
 						+ "A floresta é densa, árvores grandes e altas em um terreno irregular.\n"
 						+ "após andar alguns quilometros você ouve sons estranhos, animais talves?... \n"
@@ -333,7 +330,7 @@ public class Main {
 				
 				
 				
-				if(choiceOutroLado.equalsIgnoreCase("NÃO SE ENVOLVER")){
+				if(choiceOutroLado.equalsIgnoreCase("NÃO SE ENVOLVER") || choiceOutroLado.equalsIgnoreCase("NAO SE ENVOLVER")){
 					System.out.println("\nVocê gostaria de ajudar, mas já tem seus próprios problemas...\n"
 							+ "mas quando se distancia mais criaturas aparecem a frente, e uma já te viu e está vindo em sua direção para atacá-lo.\n"
 							+ "O visor do trage fica com aspecto avermelhado e mensagens são exibidas...");
@@ -364,16 +361,16 @@ public class Main {
 				
 			}
 			
-			if(choice.equalsIgnoreCase("SEGUIR TRILHA")){
+			if(choiceDirection.equalsIgnoreCase("SEGUIR TRILHA")){
 				String Parte4b[] = {"A trilha está cheia de destroços da sua nave, alguns ainda estão em chamas.\n"
-						+ "você chega ao que restou da cauda da nave, entra e ve que a maioria dos equipamentos, poor algum milagre ainda estão intactos, mas como estão apenas com a energia auxiliar, \n"
-						+ "um diagnóstico completo só poderá ser feito quando a energia principal for restauranda, infelizmente as baterias de alta potência estão na outra metade da nave, algo terá que ser deslocado...\n"
-						+ "talvez fazer upload de dados dos mapas de navegação e tentar carrega-los na outra parte da nave...\n"
+						+ "você chega ao que restou da cauda da nave, entra na sala de navegação e ve que a maioria dos equipamentos por algum milagre ainda estão intactos, mas estão funcionando apenas com a energia auxiliar, \n"
+						+ "um diagnóstico completo só poderá ser realizado quando a energia principal for restauranda. Infelizmente as baterias de alta potência estão na outra metade da nave, algo terá que ser deslocado...\n\n"
+						+ "Talvez fazer upload de dados dos mapas de navegação e tentar carrega-los na outra parte da nave...\n"
 						+ "mas antes que pudesse fazer algo, o som do rugido de alguma criatura ferroz preenche o silêncio da noite.\n"
 						+ "Ao olhar para fora, você observa que vários humanóides nativos do planeta estão se aproximando correndo e eufóricos, fugindo de uma criatura enorme que está se aproximando cada vez mais.\n"
 						
 					//tomada de decisão	
-					+"você pode tentar ajudá-los, ou não se envolver, mas dificilmente passará desbercebido quando a criatura acabar com eles.\n"
+					+ "você pode tentar ajudá-los, ou não se envolver, mas dificilmente passará desbercebido quando a criatura acabar com eles.\n"
 					+ "respostas disponíveis >>>> 'AJUDAR' nativos ou 'NÃO SE ENVOLVER'\n"
 					+ "||Aguardando decisão||"							
 				};
@@ -396,7 +393,7 @@ public class Main {
 				
 			
 				if(choiceTrilha.equalsIgnoreCase("AJUDAR")){						
-					System.out.println("\nVocê se prepara para atacar o hosti... o visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
+					System.out.println("\nVocê se prepara para atacar a criatura hostil... o visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
 					String ModoCombate[] = { 
 							"[MODO DE COMBATE ATIVADO]",
 							"[ARMAS PRONTAS]"							
@@ -419,12 +416,13 @@ public class Main {
 					Fight.fight(player, true, enemyFlyweight);
 				}
 			
-				if(choiceTrilha.equalsIgnoreCase("não se envolver")){
-					System.out.println("A criatura da uma patada devastadora, o grito estridente de um dos nativos ecoua e é para repentinamente quando seu corpo vai de encontro ao troco de uma arvore,"
-							+ "é possível ouvir o som dos ossos se partindo, e o corpo cai ao chão sem vida. A criatura para um instante para devorar o corpo de sua presa, em uma única abocanhada..."
-							+ "Os outros três nativos estão vindo em sua direção, gritando. Eles podem te ver e alcançam os destroços da nave onde você está."
-							+ "A criatura se volta para o local, você não tem opção a não ser lutar."
-							+ "O visor do trage fica com aspecto avermelhado e mensagens são exibidas...");
+				if(choiceTrilha.equalsIgnoreCase("NÃO SE ENVOLVER") || choiceTrilha.equalsIgnoreCase("NAO SE ENVOLVER")){
+					System.out.println("A criatura da uma patada devastadora, o grito estridente de um dos nativos ecoua e é para repentinamente quando seu corpo vai de encontro ao troco de uma arvore,\n"
+							+ "é possível ouvir o som dos ossos se partindo, e o corpo cai ao chão sem vida. A criatura para um instante para devorar o corpo de sua presa, em uma única abocanhada...\n"
+							+ "Os outros três nativos estão vindo em sua direção, gritando. Eles podem te ver e alcançam os destroços da nave onde você está.\n"
+							+ "A criatura se volta para o local, você não tem opção a não ser lutar.\n"
+							+ "O visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
+					
 					String ModoCombate[] = { 
 							"[MODO DE COMBATE ATIVADO]",
 							"[ARMAS PRONTAS]"							
