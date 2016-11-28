@@ -24,7 +24,7 @@ public class FightController {
 		Scanner scan = new Scanner(System.in);
 		String choice;
 		
-		System.out.println("\n" + enemy.getName() + " apareceu!\n");
+		System.out.println("\n[=====" + enemy.getName() + " apareceu!=====]\n");
 		
 		while (player.getBaseHealth() > 0 && enemy.getBaseHealth() > 0) {
 
@@ -80,7 +80,7 @@ public class FightController {
 		Double defenseValue = 0.0;
 		Random random = new Random();
 		
-		System.out.println("\n" + attacker.getName() + " usou " + attack.getName() + "\n");
+		System.out.println("\n>>>>>> " + attacker.getName() + " usou " + attack.getName() + "\n");
 		
 		// Calcula o valor base do ataque
 		if (attack.getUsesWeapon()) {			
@@ -105,18 +105,19 @@ public class FightController {
 		successTest = attackerSuccessTest - defenderSuccessTest;
 		
 		if (attackerSuccessTest == 20) {
-			
-		} else if (successTest <= 5) {
 			attackValue = attackValue * 2;
-			System.out.println("Ataque crítico! Dano: " + (attackValue - defenseValue));
+			System.out.println("Ataque crítico! Dano: " + (attackValue - defenseValue) + "\n");
+		} else if (successTest <= 5) {
+			attackValue = 0.0;
+			System.out.println("Ataque anulado! Dano: " + (attackValue - defenseValue) + "\n");
 		} else if (successTest > 5 && successTest <= 10) {
 			attackValue = attackValue * 0.33;
-			System.out.println("Ataque fraco! Dano: " + (attackValue - defenseValue));
+			System.out.println("Ataque fraco! Dano: " + (attackValue - defenseValue) + "\n");
 		} else if (successTest > 10 && successTest <= 15) {
 			attackValue = attackValue * 0.66;
-			System.out.println("Ataque médio! Dano: " + (attackValue - defenseValue));
+			System.out.println("Ataque médio! Dano: " + (attackValue - defenseValue) + "\n");
 		} else if (successTest > 15 && successTest < 20) {
-			System.out.println("Ataque bem sucedido! Dano: " + (attackValue - defenseValue));
+			System.out.println("Ataque bem sucedido! Dano: " + (attackValue - defenseValue) + "\n");
 		}
 		
 		// Retira a vida do defensor baseado no valor do ataque
