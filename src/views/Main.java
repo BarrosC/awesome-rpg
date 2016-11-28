@@ -43,7 +43,6 @@ public class Main {
 		
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
-		
 
 		System.out.println( "**** RPG textual de narrativa baseada nas escolhas do jogador ****\n"
 				+ "   ********* por Cristiano Barros e Gustavo Silva ********* \n\n"
@@ -70,13 +69,13 @@ public class Main {
 				+ "		.					.			.            	   	\n"
 				);
 		
-		System.out.println("Pressione ENTER para iniciar sua jornada");
+		System.out.println("Pressione ENTER para iniciar sua jornada\n");
 		scan.nextLine();
 		
-		System.out.println("**** Capítulo 1 - O Local Queda ****");
+		System.out.println("**** CAPÍTULO 1 - O LOCAL DA QUEDA ****");
 		
 		String InicioCap1[] = {""				
-				+ "\n\n\n[sons de Alerta] \n",
+				+ "\n\n[sons de Alerta] \n",
 				"Você acorda com o som do sinal de alerta...luzes de emergência piscam... sua visão vai voltando ao normal aos poucos."
 				+ "faíscas cintilam em várias partes do paineis de instrumentos pelo cockpit.\n"
 				+ "Ao olhar para o lado você ve seu co-piloto incônsciente, o indicador do traje mostra que ele já está sem vida, não há nada que você possa fazer.\n"
@@ -104,7 +103,6 @@ public class Main {
 				
 				System.out.println("Você veste o trage, assim que coloca o capacete, o visor se inicia...\n\n");
 		
-		
 		String InicializandoTraje[] = {
 				"---EXO-ARMADURA XT32---\n"
 				+" [-CARREGANDO DADOS-]",
@@ -113,7 +111,6 @@ public class Main {
 				"       [Inicializando...]\n",
 	            " [USUÁRIO IDENTIFICADO]\n"
 	        };
-		
 		
 		
 		for (int i = 0;
@@ -129,8 +126,7 @@ public class Main {
 	            //Print a message
 	            System.out.println(InicializandoTraje[i]);
 	        }
-		
-		
+	
 		String TrajeUsuario[] = {
 				" [FUZILEIRO ESTELAR :::: Cpt. James Allister - NÚMERO DE SERVIÇO: 20-131]\n",
 				" [INICIANDO DIAGNÓSTICO...]\n",
@@ -138,7 +134,6 @@ public class Main {
 				" [ESTABILIZAR. 250 MILIGRAMAS DE SANSUFETANIL : Aplicados]\n",
 				" [ATENÇÃO EFEITOS COLATERIAS TEMPORÁRIOS: Náusea, tontura, coordenação motora pode ser prejudicada.]\n\n"
 		};
-		
 		
 		for (int i = 0;
 	             i < TrajeUsuario.length;
@@ -162,13 +157,12 @@ public class Main {
 				+ "||Aguardando decisão||"				
 		};
 		
-		
 		for (int i = 0;
 	             i < Parte2.length;
 	             i++) {
 	            //Pausa de 1,7 segundos por linha
 	            try {
-					Thread.sleep(5000);
+					Thread.sleep(3000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -255,13 +249,12 @@ public class Main {
 					+ "||Aguardando decisão||"									
 				};
 				
-				
 				for (int i = 0;
 			             i < Parte3a.length;
 			             i++) {
-			            //Pausa de 3,5 segundos por linha
+			            //Pausa de 2,5 segundos por linha
 			            try {
-							Thread.sleep(4000);
+							Thread.sleep(2500);
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -289,7 +282,7 @@ public class Main {
 				for (int i = 0;
 			             i < Parte4a.length;
 			             i++) {
-			            //Pausa de 3,5 segundos por linha
+			            //Pausa de 2,0 segundos por linha
 			            try {
 							Thread.sleep(2000);
 						} catch (InterruptedException e) {
@@ -311,7 +304,7 @@ public class Main {
 					for (int i = 0;
 				             i < ModoCombate.length;
 				             i++) {
-				            //Pausa de 3,5 segundos por linha
+				            //Pausa de 1,0 segundos por linha
 				            try {
 								Thread.sleep(1000);
 							} catch (InterruptedException e) {
@@ -326,8 +319,29 @@ public class Main {
 					Fight.fight(player, true, enemyFlyweight);
 					Fight.fight(player, true, enemyFlyweight);
 					Fight.fight(player, true, enemyFlyweight);
+					
+					String FinalAtaque [] = {
+							"Ao final da batalha se visor volta ao modo passivo..."
+							+ "[MODO DE COMBATE DESATIVADO]",
+							"[ARMAS AGUARDANDO]"
+					};
+					for (int i = 0;
+				             i < FinalAtaque.length;
+				             i++) {
+				            //Pausa de 1,0 segundos por linha
+				            try {
+								Thread.sleep(1000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+				            //Print a message
+				            System.out.println(FinalAtaque[i]);
+				        }
+					
+					System.out.println("\nA Jovem começa a se aproximar...");
+					
 				}
-				
 				
 				
 				if(choiceOutroLado.equalsIgnoreCase("NÃO SE ENVOLVER") || choiceOutroLado.equalsIgnoreCase("NAO SE ENVOLVER")){
@@ -343,7 +357,7 @@ public class Main {
 					for (int i = 0;
 				             i < ModoCombate.length;
 				             i++) {
-				            //Pausa de 3,5 segundos por linha
+				            //Pausa de 1,0 segundos por linha
 				            try {
 								Thread.sleep(1000);
 							} catch (InterruptedException e) {
@@ -358,7 +372,6 @@ public class Main {
 					Fight.fight(player, false, enemyFlyweight);
 					Fight.fight(player, false, enemyFlyweight);
 				}
-				
 			}
 			
 			if(choiceDirection.equalsIgnoreCase("SEGUIR TRILHA")){
@@ -378,7 +391,7 @@ public class Main {
 				for (int i = 0;
 			             i < Parte4b.length;
 			             i++) {
-			            //Pausa de 3,5 segundos por linha
+			            //Pausa de 2,0 segundos por linha
 			            try {
 							Thread.sleep(2000);
 						} catch (InterruptedException e) {
@@ -389,8 +402,7 @@ public class Main {
 			            System.out.println(Parte4b[i]);
 			        }
 				choiceTrilha = scan.nextLine();
-				
-				
+			
 			
 				if(choiceTrilha.equalsIgnoreCase("AJUDAR")){						
 					System.out.println("\nVocê se prepara para atacar a criatura hostil... o visor do trage fica com aspecto avermelhado e mensagens são exibidas...\n");
@@ -402,7 +414,7 @@ public class Main {
 					for (int i = 0;
 				             i < ModoCombate.length;
 				             i++) {
-				            //Pausa de 3,5 segundos por linha
+				            //Pausa de 1,0 segundos por linha
 				            try {
 								Thread.sleep(1000);
 							} catch (InterruptedException e) {
@@ -431,7 +443,7 @@ public class Main {
 					for (int i = 0;
 				             i < ModoCombate.length;
 				             i++) {
-				            //Pausa de 3,5 segundos por linha
+				            //Pausa de 1,0 segundos por linha
 				            try {
 								Thread.sleep(1000);
 							} catch (InterruptedException e) {
@@ -452,5 +464,4 @@ public class Main {
 			
 		}
 	}
-
 }
