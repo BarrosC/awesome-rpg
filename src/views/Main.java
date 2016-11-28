@@ -567,8 +567,6 @@ public class Main {
 					
 					//iniciar mecanica de combate com criaturas atacando primeiro					
 					Fight.fight(true);
-					Fight.fight(true);
-					Fight.fight(true);
 					
 					String FinalAtaque [] = {
 							"\n=============================================================================\n"
