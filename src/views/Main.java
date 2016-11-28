@@ -7,6 +7,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 import constants.ElementConstants;
+import constants.EnemyFlyweightSingleton;
+import constants.PlayerSingleton;
 import constants.RoleConstants;
 import controllers.EnemyFlyweightFactory;
 import models.Armor;
@@ -18,27 +20,18 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		// Configuração do jogador
+		Player player = PlayerSingleton.getPlayer();
+		
+		// Iniciar inimigos com padrão Flyweight
+		FlyweightInterface enemyFlyweight = EnemyFlyweightSingleton.getPlayer();
+		
 		String choice = null;
 		String choiceSignal = null;
 		String choiceAfterSignal = null;
 		String choiceDirection = null;
 		String choiceTrilha = null;
 		String choiceOutroLado = null;
-		
-		// Configuração do jogador
-		Armor basicArmor = new Armor("Exo-Armadura XT32", "Armadura de alta resistência que aumenta as capacidades humanas.",
-							RoleConstants.PILOT, ElementConstants.NORMAL, 1, 6.0, 8.0);
-		
-		ArrayList<Move> playerMoves = new ArrayList<Move>();
-		playerMoves.add( new Move("Soco Turbina", "Soco forte que usa pequenas turbinas instaladas na luva do piloto.", ElementConstants.NORMAL, false, 2.0, 0));
-		
-		Player player = new Player("Cpt. Allister",
-									"Os avançados humanos de Marselha, com seus cabelos brancos, fala suave e grande inteligência e esclarecimento, podem lembrar rumores e lendas sobre qualquer assunto com um teste bem-sucedido de Inteligência.", 
-									RoleConstants.PILOT, 
-									150.00, 4.0, 6.0, 1, basicArmor, null, playerMoves, 0.0, 0.0);
-		
-		// Iniciar inimigos com padrão Flyweight
-		FlyweightInterface enemyFlyweight = new EnemyFlyweightFactory();
 		
 		
 		@SuppressWarnings("resource")
@@ -77,7 +70,7 @@ public class Main {
 		String InicioCap1[] = {""				
 				+ "\n\n[sons de Alerta] \n",
 				"Você acorda com o som do sinal de alerta...luzes de emergência piscam... sua visão vai voltando ao normal aos poucos."
-				+ "faíscas cintilam em várias partes do paineis de instrumentos pelo cockpit.\n"
+				+ "faíscas cintilam em várias partes dos painéis de instrumentos pelo cockpit.\n"
 				+ "Ao olhar para o lado você ve seu co-piloto incônsciente, o indicador do traje mostra que ele já está sem vida, não há nada que você possa fazer.\n"
 				+ "Você levanta do acento e se dirige a parte traseira de sua nave, observa que existem algumas caixas de suprimentos, outras de equipamentos militar, e um trage de combate.\n"
 				+ "você acha melhor vestir o trage, pois o planeta pode ser hostil e uma proteção a mais cairá bem... além disso, o traje possui uma unidade médica de campo, \n"
@@ -174,6 +167,8 @@ public class Main {
 		
 				Weapon plasmaRifle = new Weapon("Rifle de plasma", "Rifle que dispara feixes de plasma.", RoleConstants.PILOT, ElementConstants.NORMAL, 1, 6.0);
 				player.setWeapon(plasmaRifle);
+				
+				ArrayList<Move> playerMoves = player.getMoves();
 				playerMoves.add( new Move("Tiro de plasma", "Dispara um feixe de plasma concentrado.", ElementConstants.NORMAL, true, 2.0, 0));
 				
 				choiceSignal = scan.nextLine();
@@ -316,9 +311,9 @@ public class Main {
 				        }
 					
 					//iniciar mecanica de combate com players atacando primeiro						
-					Fight.fight(player, true, enemyFlyweight);
-					Fight.fight(player, true, enemyFlyweight);
-					Fight.fight(player, true, enemyFlyweight);
+					Fight.fight(true);
+					Fight.fight(true);
+					Fight.fight(true);
 					
 					String FinalAtaque [] = {
 							"Ao final da batalha se visor volta ao modo passivo..."
@@ -368,9 +363,9 @@ public class Main {
 				            System.out.println(ModoCombate[i]);
 				        }
 					//iniciar mecanica de combate com criaturas atacando primeiro				
-					Fight.fight(player, false, enemyFlyweight);
-					Fight.fight(player, false, enemyFlyweight);
-					Fight.fight(player, false, enemyFlyweight);
+					Fight.fight(false);
+					Fight.fight(false);
+					Fight.fight(false);
 				}
 			}
 			
@@ -425,7 +420,7 @@ public class Main {
 				            System.out.println(ModoCombate[i]);
 				        }
 					
-					Fight.fight(player, true, enemyFlyweight);
+					Fight.fight(true);
 				}
 			
 				if(choiceTrilha.equalsIgnoreCase("NÃO SE ENVOLVER") || choiceTrilha.equalsIgnoreCase("NAO SE ENVOLVER")){
@@ -455,9 +450,9 @@ public class Main {
 				        }
 					
 					//iniciar mecanica de combate com criaturas atacando primeiro					
-					Fight.fight(player, true, enemyFlyweight);
-					Fight.fight(player, true, enemyFlyweight);
-					Fight.fight(player, true, enemyFlyweight);
+					Fight.fight(true);
+					Fight.fight(true);
+					Fight.fight(true);
 				}
 			
 			}

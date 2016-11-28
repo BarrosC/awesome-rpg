@@ -7,10 +7,8 @@ import models.Person;
 public abstract class Fight {
 	
 	
-	public static void fight(Person player, Boolean playerTurn, FlyweightInterface flyweight) {
+	public static void fight(Boolean playerTurn) {
 		FightController fightController = new FightController();
-		
-		fightController.doFight(player, playerTurn, flyweight);
-		
+		fightController.doFight(playerTurn);		
 	}
 }

@@ -5,16 +5,19 @@ import interfaces.FlyweightInterface;
 import java.util.Random;
 import java.util.Scanner;
 
+import constants.PlayerSingleton;
 import views.GameOver;
 import models.Enemy;
 import models.Move;
 import models.Person;
+import models.Player;
 
 public class FightController {
 	
-	public void doFight(Person player, Boolean playerTurn, FlyweightInterface flyweight) {
+	public void doFight(Boolean playerTurn) {
 		
-		Enemy enemy = EnemyController.getRandomEnemy(flyweight);
+		Player player = PlayerSingleton.getPlayer();
+		Enemy enemy = EnemyController.getRandomEnemy();
 		Double enemyInitialHealth = enemy.getBaseHealth();
 		
 		@SuppressWarnings("resource")
@@ -27,8 +30,10 @@ public class FightController {
 
 			if (playerTurn) {
 				
-				System.out.println(player.getName() + " HP: " + player.getBaseHealth() + "         "
-									+ enemy.getName() + " HP: " + enemy.getBaseHealth() + "\n");
+				System.out.println("\n----------------------------------------------------------"
+									+ "\n" + player.getName() + " HP: " + player.getBaseHealth() + "         "
+									+ enemy.getName() + " HP: " + enemy.getBaseHealth() + "\n"
+									+ "----------------------------------------------------------");
 				
 				System.out.println("Escolha uma ação: \n\n");
 				
@@ -42,7 +47,11 @@ public class FightController {
 
 				choice = scan.nextLine();
 				
-				doAttack(player, player.getMoves().get(Integer.parseInt(choice) - 1), enemy);
+				try {
+					doAttack(player, player.getMoves().get(Integer.parseInt(choice) - 1), enemy);
+				} catch (Exception e) {
+					doAttack(player, player.getMoves().get(0), enemy);
+				}
 			} else {
 				
 				Random random = new Random();
